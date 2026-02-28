@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGQUEST GAMES — 名作を、掘り当てろ。</title>
+<meta name="description" content="知る人ぞ知るゲームの名作を発掘するアーカイブメディア。玄人が唸る隠れた名作を、プラットフォームを超えて掘り尽くす。">
+<meta property="og:title" content="DIGQUEST GAMES — 名作を、掘り当てろ。">
+<meta property="og:description" content="知る人ぞ知るゲームの名作を発掘するアーカイブメディア。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   DIGQUEST GAMES — VINTAGE CARTOON × DARK ARCHIVE
+   Cuphead-inspired 1930s aesthetic meets 
+   modern dark game archive
+   ============================================ */
+
+:root {
+  --bg-deep: #0c0b0e;
+  --bg-primary: #12111a;
+  --bg-card: #1a1824;
+  --bg-card-hover: #211f2e;
+  --parchment: #f5e6c8;
+  --parchment-dark: #d4b896;
+  --gold: #c9a84c;
+  --gold-light: #e8c65e;
+  --gold-glow: 0 0 30px rgba(201,168,76,0.25);
+  --red-accent: #c0392b;
+  --red-glow: 0 0 20px rgba(192,57,43,0.3);
+  --cyan: #4ecdc4;
+  --cyan-glow: 0 0 20px rgba(78,205,196,0.25);
+  --text-primary: #ece4d4;
+  --text-secondary: #9e958a;
+  --text-dim: #645e54;
+  --border: #2a2635;
+  --border-light: #3a3545;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* Film grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+}
+
+/* Scanlines */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 6px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* =====================
+   HEADER
+   ===================== */
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 32px;
+  height: 72px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(12,11,14,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex; align-items: center; gap: 14px;
+}
+
+.logo-emblem {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, #1a1520 0%, #0c0b0e 100%);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  box-shadow: var(--gold-glow), inset 0 0 12px rgba(201,168,76,0.05);
+}
+
+.logo-emblem::before {
+  content: 'DQ';
+  font-family: 'Press Start 2P', monospace;
+  font-size: 13px;
+  color: var(--gold);
+  text-shadow: 0 0 12px rgba(201,168,76,0.4);
+  z-index: 1;
+}
+
+/* D-Pad watermark */
+.logo-dpad {
+  position: absolute;
+  top: 5px; left: 5px;
+  opacity: 0.12;
+}
+.logo-dpad-h, .logo-dpad-v {
+  background: var(--gold);
+  position: absolute;
+}
+.logo-dpad-h { width: 16px; height: 5px; top: 5px; left: 0; }
+.logo-dpad-v { width: 5px; height: 16px; top: 0; left: 5px; }
+
+/* Corner notch */
+.logo-emblem::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 10px;
+}
+
+.logo-text {
+  font-family: 'Abril Fatface', serif;
+  font-size: 22px;
+  color: var(--parchment);
+  letter-spacing: 3px;
+}
+
+.nav-desktop {
+  display: flex; gap: 32px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.nav-desktop a {
+  color: var(--text-secondary);
+  transition: all 0.3s;
+  position: relative;
+}
+.nav-desktop a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-desktop a:hover { color: var(--gold); }
+.nav-desktop a:hover::after { width: 100%; }
+
+/* Hamburger */
+.hamburger {
+  display: none; flex-direction: column; gap: 6px;
+  cursor: pointer; z-index: 1001;
+  padding: 8px;
+}
+.hamburger span {
+  width: 26px; height: 1.5px;
+  background: var(--gold); transition: 0.3s;
+  display: block;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(7.5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-7.5px); }
+
+.mobile-menu {
+  position: fixed; top: 0; right: -100%;
+  width: 100%; height: 100dvh;
+  background: rgba(12,11,14,0.98);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 36px;
+  transition: right 0.4s ease; z-index: 999;
+}
+.mobile-menu.active { right: 0; }
+.mobile-menu a {
+  font-family: 'Abril Fatface', serif;
+  font-size: 24px; letter-spacing: 4px;
+  color: var(--text-secondary); transition: 0.3s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .nav-desktop { display: none; }
+  .hamburger { display: flex; }
+  .header { padding: 0 20px; height: 64px; }
+  .logo-text { font-size: 18px; }
+  .logo-emblem { width: 36px; height: 36px; }
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero {
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  position: relative; overflow: hidden;
+}
+
+/* Radial glow */
+.hero::before {
+  content: '';
+  position: absolute; top: 40%; left: 50%;
+  width: 800px; height: 800px;
+  background: radial-gradient(
+    ellipse, rgba(201,168,76,0.06) 0%,
+    rgba(192,57,43,0.03) 40%, transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Decorative corner ornaments */
+.hero::after {
+  content: '◆ ◇ ◆';
+  position: absolute; bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px; letter-spacing: 12px;
+  color: var(--text-dim);
+}
+
+.hero-ornament {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; letter-spacing: 8px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  display: flex; align-items: center; gap: 16px;
+}
+.hero-ornament::before,
+.hero-ornament::after {
+  content: '';
+  width: 40px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+.hero-ornament::after {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.hero h1 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(44px, 11vw, 88px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.hero h1 .accent {
+  color: var(--gold);
+  text-shadow: var(--gold-glow);
+  position: relative;
+}
+
+/* Underline decoration on accent */
+.hero h1 .accent::after {
+  content: '';
+  position: absolute; bottom: 2px; left: 0; right: 0;
+  height: 4px;
+  background: var(--gold);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.hero-brand {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(20px, 4vw, 32px);
+  letter-spacing: 10px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.hero-desc {
+  font-size: 15px; color: var(--text-secondary);
+  max-width: 540px; line-height: 2;
+  margin-bottom: 44px;
+}
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+.btn-gold {
+  font-family: 'Courier Prime', monospace;
+  font-weight: 700;
+  padding: 16px 36px;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  font-size: 14px; letter-spacing: 3px;
+  cursor: pointer; transition: 0.4s;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--gold);
+  transform: translateY(100%);
+  transition: transform 0.4s;
+  z-index: -1;
+}
+.btn-gold:hover {
+  color: var(--bg-deep);
+}
+.btn-gold:hover::before { transform: translateY(0); }
+
+.btn-ghost {
+  font-family: 'Courier Prime', monospace;
+  padding: 16px 36px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  background: transparent;
+  font-size: 14px; letter-spacing: 3px;
+  cursor: pointer; transition: 0.4s;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+/* Stats */
+.hero-stats {
+  display: flex; gap: 56px;
+  margin-top: 64px; padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-item { text-align: center; }
+
+.stat-num {
+  font-family: 'Abril Fatface', serif;
+  font-size: 36px;
+  color: var(--gold);
+  text-shadow: var(--gold-glow);
+}
+
+.stat-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px; color: var(--text-dim);
+  letter-spacing: 3px; text-transform: uppercase;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .hero-stats { gap: 32px; flex-wrap: wrap; justify-content: center; }
+  .hero { padding: 90px 20px 60px; }
+}
+
+/* =====================
+   MARQUEE
+   ===================== */
+.marquee-wrap {
+  overflow: hidden; padding: 18px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(18,17,26,0.8);
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee 35s linear infinite;
+}
+.marquee-track span {
+  font-family: 'Abril Fatface', serif;
+  font-size: 13px; letter-spacing: 5px;
+  color: var(--text-dim);
+  white-space: nowrap; padding: 0 28px;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* =====================
+   SECTIONS
+   ===================== */
+.section {
+  padding: 100px 24px;
+  max-width: 1200px; margin: 0 auto;
+}
+
+.section-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; margin-bottom: 56px;
+  flex-wrap: wrap; gap: 16px;
+}
+
+.section-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; color: var(--gold);
+  letter-spacing: 5px; text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 32px;
+  margin-top: 8px; letter-spacing: 1px;
+}
+.section-link {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px; color: var(--text-secondary);
+  letter-spacing: 1px; transition: 0.3s;
+}
+.section-link:hover { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .section { padding: 72px 16px; }
+  .section-title { font-size: 26px; }
+}
+
+/* =====================
+   GAME CARDS — with images
+   ===================== */
+.games-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+}
+
+.game-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 100%;
+  background: linear-gradient(to right, rgba(201,168,76,0.08), transparent);
+  transition: width 0.5s;
+  z-index: 1;
+}
+
+.game-card:hover { border-color: rgba(201,168,76,0.3); }
+.game-card:hover::before { width: 100%; }
+
+/* Image container */
+.card-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-deep);
+  min-height: 200px;
+}
+
+.card-image img {
+  display: none;
+}
+
+.card-image-placeholder {
+  width: 100%; height: 100%;
+  min-height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Abril Fatface', serif;
+  font-size: 28px;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.card-image-placeholder.cuphead { background: linear-gradient(135deg, #1a0a0a 0%, #3d1515 40%, #c0392b 100%); }
+.card-image-placeholder.valkyrie { background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3d 40%, #4a3080 100%); }
+.card-image-placeholder.moon { background: linear-gradient(135deg, #0a1a0a 0%, #1a3d1a 40%, #2d6a4f 100%); }
+.card-image-placeholder.ikaruga { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #f5e6c8 50%, #1a1a1a 70%, #0a0a0a 100%); }
+.card-image-placeholder.tactics { background: linear-gradient(135deg, #1a150a 0%, #3d2a0a 40%, #8b6914 100%); }
+.card-image-placeholder.metalwolf { background: linear-gradient(135deg, #0a0a1a 0%, #0a1a3d 40%, #1a5276 100%); }
+
+.game-card:hover .card-image img {
+  transform: scale(1.05);
+  filter: saturate(1) contrast(1.05);
+}
+
+/* Vintage vignette on image */
+.card-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(12,11,14,0.6) 100%);
+  pointer-events: none;
+}
+
+/* Platform badge on image */
+.card-platform-badge {
+  position: absolute; bottom: 12px; left: 12px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px; letter-spacing: 1px;
+  padding: 4px 10px;
+  background: rgba(12,11,14,0.85);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--gold);
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.card-body {
+  padding: 32px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.card-era {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; color: var(--red-accent);
+  letter-spacing: 2px; margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 24px;
+  letter-spacing: 0.5px; margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.card-subtitle {
+  font-size: 12px; color: var(--text-dim);
+  margin-bottom: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.card-tags {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;
+}
+.tag {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px; padding: 3px 10px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.card-desc {
+  font-size: 13.5px; color: var(--text-secondary);
+  line-height: 1.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-arrow {
+  position: absolute; bottom: 28px; right: 28px;
+  font-size: 16px; color: var(--text-dim); transition: 0.3s;
+}
+.game-card:hover .card-arrow { color: var(--gold); }
+
+/* Mobile: stack image on top */
+@media (max-width: 768px) {
+  .game-card {
+    grid-template-columns: 1fr;
+  }
+  .card-image {
+    min-height: 180px;
+    max-height: 220px;
+  }
+  .card-body { padding: 24px 20px; }
+  .card-title { font-size: 20px; }
+  .card-desc { font-size: 13px; -webkit-line-clamp: 3; }
+  .card-arrow { bottom: 20px; right: 20px; }
+}
+
+@media (max-width: 480px) {
+  .card-image { min-height: 160px; max-height: 200px; }
+  .card-body { padding: 20px 16px; }
+}
+
+/* =====================
+   FEATURED SECTION
+   ===================== */
+.featured {
+  padding: 100px 24px;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+/* Decorative corner lines */
+.featured::before {
+  content: '';
+  position: absolute; top: 32px; left: 32px;
+  width: 60px; height: 60px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  opacity: 0.3;
+}
+.featured::after {
+  content: '';
+  position: absolute; bottom: 32px; right: 32px;
+  width: 60px; height: 60px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  opacity: 0.3;
+}
+
+.featured-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+
+.featured-badge {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; color: var(--red-accent);
+  letter-spacing: 5px; text-transform: uppercase;
+  margin-bottom: 20px; font-weight: 700;
+}
+.featured-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(36px, 6vw, 56px);
+  margin-bottom: 8px;
+  color: var(--parchment);
+}
+.featured-sub {
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px; color: var(--text-dim);
+  margin-bottom: 24px; letter-spacing: 1px;
+}
+.featured-text {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 2; margin-bottom: 32px;
+}
+
+.featured-visual {
+  position: relative;
+}
+
+.featured-frame {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--gold-glow), 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.featured-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.1);
+}
+
+/* CRT curve effect */
+.featured-frame::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(12,11,14,0.5) 100%);
+  border-radius: 12px;
+}
+
+/* Floating label */
+.featured-float-label {
+  position: absolute; top: -12px; right: 24px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px; letter-spacing: 2px;
+  padding: 4px 14px;
+  background: var(--red-accent);
+  color: white;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .featured-inner { grid-template-columns: 1fr; }
+  .featured-visual { order: -1; }
+  .featured { padding: 72px 20px; }
+  .featured::before, .featured::after { display: none; }
+}
+
+/* =====================
+   PLATFORMS
+   ===================== */
+.platforms { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+
+.platform-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 3px; margin-top: 48px;
+}
+
+.platform-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 44px 28px; text-align: center;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative top border on hover */
+.platform-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.platform-card:hover::before { opacity: 1; }
+.platform-card:hover { border-color: var(--border-light); }
+
+.platform-icon { font-size: 40px; margin-bottom: 18px; }
+.platform-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 17px;
+  letter-spacing: 2px; margin-bottom: 10px;
+}
+.platform-count {
+  font-family: 'Abril Fatface', serif;
+  font-size: 28px; color: var(--gold);
+  text-shadow: var(--gold-glow);
+}
+.platform-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; color: var(--text-dim);
+  letter-spacing: 2px; margin-top: 4px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .platform-grid { grid-template-columns: 1fr; }
+  .platform-card { padding: 32px 24px; }
+}
+
+/* =====================
+   CTA
+   ===================== */
+.cta {
+  padding: 120px 24px; text-align: center;
+  position: relative;
+}
+
+.cta::before {
+  content: '';
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+}
+
+.cta-ornament {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px; color: var(--text-dim);
+  letter-spacing: 6px; margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.cta h2 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: clamp(26px, 5vw, 40px);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.cta p { color: var(--text-secondary); margin-bottom: 40px; font-size: 15px; }
+
+/* =====================
+   FOOTER
+   ===================== */
+.footer {
+  padding: 64px 24px 32px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-primary);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-logo {
+  font-family: 'Abril Fatface', serif;
+  font-size: 22px; color: var(--gold);
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+.footer-desc {
+  font-size: 13px; color: var(--text-dim); line-height: 1.9;
+}
+.footer-heading {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--text-secondary); text-transform: uppercase;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.footer-links {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.footer-links a { font-size: 13px; color: var(--text-dim); transition: 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+
+.footer-bottom {
+  max-width: 1200px; margin: 48px auto 0;
+  padding-top: 24px; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px; color: var(--text-dim); letter-spacing: 1px;
+}
+.footer-tagline {
+  font-family: 'Abril Fatface', serif;
+  font-size: 12px; color: var(--text-dim);
+  letter-spacing: 4px;
+}
+
+@media (max-width: 768px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer { padding: 48px 20px 24px; }
+}
+@media (max-width: 480px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+/* =====================
+   SCROLL ANIMATIONS
+   ===================== */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Stagger children */
+.games-grid .game-card:nth-child(2) { transition-delay: 0.1s; }
+.games-grid .game-card:nth-child(3) { transition-delay: 0.2s; }
+.games-grid .game-card:nth-child(4) { transition-delay: 0.3s; }
+.games-grid .game-card:nth-child(5) { transition-delay: 0.35s; }
+.games-grid .game-card:nth-child(6) { transition-delay: 0.4s; }
+.games-grid .game-card:nth-child(7) { transition-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-emblem">
+      <span class="logo-dpad"><span class="logo-dpad-h"></span><span class="logo-dpad-v"></span></span>
+    </span>
+    <span class="logo-text">DIGQUEST GAMES</span>
+  </a>
+  <nav class="nav-desktop">
+    <a href="#games">Games</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#featured">Featured</a>
+    <a href="#about">About</a>
+    <a href="#games">掘る →</a>
+  </nav>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#games" onclick="closeMenu()">Games</a>
+  <a href="#platforms" onclick="closeMenu()">Platforms</a>
+  <a href="#featured" onclick="closeMenu()">Featured</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#games" onclick="closeMenu()">掘る →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ornament">Game Archive Media</div>
+  <h1>名作を、<span class="accent">掘り</span><br>当てろ。</h1>
+  <div class="hero-brand">DIGQUEST GAMES</div>
+  <p class="hero-desc">
+    メインストリームの裏側に眠る、知る人ぞ知る名作たち——<br>
+    プラットフォームを超えて、ゲーム史の秘宝を掘り起こすアーカイブメディア。
+  </p>
+  <div class="hero-actions">
+    <a href="#games" class="btn-gold">掘り始める →</a>
+    <a href="#featured" class="btn-ghost">Featured を見る</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Hidden Gems</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Platforms</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">40年</div>
+      <div class="stat-label">History</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>DIGQUEST GAMES</span><span>◆</span><span>HIDDEN GEMS ARCHIVE</span><span>◆</span>
+    <span>RETRO × MODERN</span><span>◆</span><span>GAME ARCHAEOLOGY</span><span>◆</span>
+    <span>名作を掘り当てろ</span><span>◆</span><span>PS5 / SWITCH / MOBILE</span><span>◆</span>
+    <span>DIGQUEST GAMES</span><span>◆</span><span>HIDDEN GEMS ARCHIVE</span><span>◆</span>
+    <span>RETRO × MODERN</span><span>◆</span><span>GAME ARCHAEOLOGY</span><span>◆</span>
+    <span>名作を掘り当てろ</span><span>◆</span><span>PS5 / SWITCH / MOBILE</span><span>◆</span>
+  </div>
+</div>
+
+<!-- GAMES SECTION -->
+<section class="section" id="games">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Hidden Gems</div>
+      <h2 class="section-title">発掘タイトル</h2>
+    </div>
+    <a href="#" class="section-link">すべて見る →</a>
+  </div>
+
+  <div class="games-grid">
+
+    <!-- 1: Cuphead -->
+    <a href="articles/cuphead.html" class="game-card fade-in">
+      <div class="card-image">
+        <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dw182faf4f/products/D70010000016331/squareHeroBanner/139836b3193bb50dab4982ac706d5d5d148fb7cc34ff3c6c21c34cdefa4f5df7.jpg?sw=990&strip=false" alt="Cuphead" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85) contrast(1.1);transition:transform 0.6s,filter 0.6s;">
+        <span class="card-platform-badge">Xbox / Switch / PS4 / PC</span>
+      </div>
+      <div class="card-body">
+        <div class="card-era">// 2017 — StudioMDHR</div>
+        <div class="card-title">CUPHEAD</div>
+        <div class="card-subtitle">カップヘッド</div>
+        <div class="card-tags">
+          <span class="tag">RUN & GUN</span>
+          <span class="tag">CARTOON</span>
+        </div>
+        <p class="card-desc">1930年代のフライシャー・スタジオ風アニメーションを完全手描きで再現した驚異のアクション。すべてのフレームが芸術品でありながら、骨太の高難度ボスラッシュが待ち受ける。ゲームとアートの究極の融合。</p>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- 2: Valkyrie Profile -->
+    <a href="#" class="game-card fade-in">
+      <div class="card-image">
+        <div class="card-image-placeholder valkyrie">VALKYRIE</div>
+        <span class="card-platform-badge">PS / PSP / Switch</span>
+      </div>
+      <div class="card-body">
+        <div class="card-era">// 1999 — tri-Ace / ENIX</div>
+        <div class="card-title">VALKYRIE PROFILE</div>
+        <div class="card-subtitle">ヴァルキリープロファイル</div>
+        <div class="card-tags">
+          <span class="tag">RPG</span>
+          <span class="tag">MYTHOLOGY</span>
+        </div>
+        <p class="card-desc">北欧神話の戦乙女レナスとなり、死者の魂を集めてラグナロクに備える。横スクロール探索とコンボ制バトルの融合、分岐するマルチエンディング——90年代RPGの到達点でありながら、不遇だった「掘るべき」一本。</p>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- 4: moon -->
+    <a href="#" class="game-card fade-in">
+      <div class="card-image">
+        <div class="card-image-placeholder moon">MOON</div>
+        <span class="card-platform-badge">PS / Switch</span>
+      </div>
+      <div class="card-body">
+        <div class="card-era">// 1997 — Love-de-Lic</div>
+        <div class="card-title">moon</div>
+        <div class="card-subtitle">ムーン</div>
+        <div class="card-tags">
+          <span class="tag">ANTI-RPG</span>
+          <span class="tag">ADVENTURE</span>
+        </div>
+        <p class="card-desc">「勇者」がモンスターを倒すRPGの常識を根底から問い直す、ラブデリックの伝説的デビュー作。戦わずに「ラブ」を集めるゲームデザインは、のちのUNDERTALEにも影響を与えた。2019年のSwitch移植で再評価が爆発。</p>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- 5: Ikaruga -->
+    <a href="#" class="game-card fade-in">
+      <div class="card-image">
+        <div class="card-image-placeholder ikaruga">斑鳩</div>
+        <span class="card-platform-badge">DC / GC / Switch / PS4</span>
+      </div>
+      <div class="card-body">
+        <div class="card-era">// 2001 — Treasure</div>
+        <div class="card-title">IKARUGA</div>
+        <div class="card-subtitle">斑鳩</div>
+        <div class="card-tags">
+          <span class="tag">SHOOTING</span>
+          <span class="tag">PUZZLE</span>
+        </div>
+        <p class="card-desc">白と黒——「属性切り替え」という唯一無二のシステムで弾幕STGを芸術の域に昇華させた、トレジャーの最高傑作。全5章をノーミスでクリアする姿は「ゲームの詩」と称される。20年以上経った今も世界中のプレイヤーがスコアを競い続ける。</p>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- 6: Tactics Ogre -->
+    <a href="#" class="game-card fade-in">
+      <div class="card-image">
+        <div class="card-image-placeholder tactics">T.OGRE</div>
+        <span class="card-platform-badge">SFC / PSP / Switch / PS5</span>
+      </div>
+      <div class="card-body">
+        <div class="card-era">// 1995 — Quest</div>
+        <div class="card-title">TACTICS OGRE</div>
+        <div class="card-subtitle">タクティクスオウガ — Let Us Cling Together</div>
+        <div class="card-tags">
+          <span class="tag">SRPG</span>
+          <span class="tag">POLITICAL</span>
+        </div>
+        <p class="card-desc">民族紛争を背景に「正義とは何か」を問い続ける松野泰己の代表作。プレイヤーの選択が物語を3つのルートに分岐させ、どの道を選んでも割り切れない苦さが残る。SRPGの教科書にして、ゲームシナリオの金字塔。</p>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+    <!-- 7: Metal Wolf Chaos XD -->
+    <a href="#" class="game-card fade-in">
+      <div class="card-image">
+        <div class="card-image-placeholder metalwolf">M.W.C.</div>
+        <span class="card-platform-badge">Xbox / PS4 / PC</span>
+      </div>
+      <div class="card-body">
+        <div class="card-era">// 2004 / 2019 — FromSoftware</div>
+        <div class="card-title">METAL WOLF CHAOS XD</div>
+        <div class="card-subtitle">メタルウルフカオス XD</div>
+        <div class="card-tags">
+          <span class="tag">ACTION</span>
+          <span class="tag">MECH</span>
+        </div>
+        <p class="card-desc">アメリカ大統領が巨大ロボに乗って反乱軍と戦う——フロム・ソフトウェアが放った伝説のバカゲー。元はXbox専売で入手困難だったが、2019年にXDとしてリマスター。ソウルシリーズ以前のフロムの「もう一つの顔」を知る者だけが楽しめる一本。</p>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FEATURED: Cuphead -->
+<section class="featured" id="featured">
+  <div class="featured-inner">
+    <div>
+      <div class="featured-badge">// Editor's Pick</div>
+      <h2 class="featured-title">Cuphead</h2>
+      <div class="featured-sub">StudioMDHR — 2017 / DLC: The Delicious Last Course 2022</div>
+      <p class="featured-text">
+        1930年代のフライシャー・アニメを完全手描きで蘇らせた、ゲーム史上最も美しいアクション。
+        水彩画の背景、セル画のキャラクター、ジャズの生演奏サウンドトラック——
+        すべてが「本物」で構成された世界は、プレイするたびに映画を観ているかのような感覚を与える。
+        その裏に潜む容赦ないボスラッシュの高難度設計こそ、玄人を熱狂させる理由だ。
+      </p>
+      <a href="#" class="btn-gold">記事を読む →</a>
+    </div>
+    <div class="featured-visual">
+      <div class="featured-frame">
+        <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dw78928cb4/products/D70010000016331/heroBanner/3b092ff21d1c3255371d41f4e79eb1216a0d04ed5b477ee4eadf79fc2d428328.jpg?sw=1368&strip=false" alt="Cuphead gameplay" loading="lazy" style="width:100%;height:100%;min-height:280px;object-fit:cover;">
+        <span class="featured-float-label">Now Playing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section class="platforms" id="platforms">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Platforms</div>
+      <h2 class="section-title">プラットフォーム別</h2>
+    </div>
+  </div>
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="platform-icon">🎮</div>
+      <div class="platform-name">PS5 / PS4</div>
+      <div class="platform-count">20+</div>
+      <div class="platform-label">Titles</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">🕹️</div>
+      <div class="platform-name">Switch</div>
+      <div class="platform-count">25+</div>
+      <div class="platform-label">Titles</div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-icon">📱</div>
+      <div class="platform-name">Mobile</div>
+      <div class="platform-count">10+</div>
+      <div class="platform-label">Titles</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="about">
+  <div class="cta-ornament">// Join the Quest</div>
+  <h2>まだ掘り足りない？<br>一緒に掘ろう。</h2>
+  <p>毎週更新。知られざる名作を掘り続ける。</p>
+  <a href="#games" class="btn-gold">掘り始める →</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">DIGQUEST GAMES</div>
+      <p class="footer-desc">知る人ぞ知るゲームの名作を発掘する<br>アーカイブメディア。</p>
+      <p class="footer-desc" style="margin-top:8px;font-size:11px;letter-spacing:1px;">a plucks world media</p>
+    </div>
+    <div>
+      <div class="footer-heading">Explore</div>
+      <ul class="footer-links">
+        <li><a href="#">発掘タイトル一覧</a></li>
+        <li><a href="#">プラットフォーム別</a></li>
+        <li><a href="#">ジャンル別</a></li>
+        <li><a href="#">年代別</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Learn</div>
+      <ul class="footer-links">
+        <li><a href="#">入門ガイド</a></li>
+        <li><a href="#">コラム・考察</a></li>
+        <li><a href="#">開発者列伝</a></li>
+        <li><a href="#">ゲーム用語集</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">About</div>
+      <ul class="footer-links">
+        <li><a href="#">DIGQUEST GAMESとは</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 DIGQUEST GAMES / plucks world — All Rights Reserved</span>
+    <span class="footer-tagline">DIG THE GAME.</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  h.classList.toggle('active');
+  m.classList.toggle('active');
+  document.body.style.overflow = m.classList.contains('active') ? 'hidden' : '';
+}
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('active');
+  document.getElementById('mobileMenu').classList.remove('active');
+  document.body.style.overflow = '';
+}
+window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+
+// Scroll fade-in with stagger
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

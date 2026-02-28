@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuphead — 1930年代カートゥーンが蘇る、史上最も美しい激ムズアクション | DIGQUEST GAMES</title>
+<meta name="description" content="1930年代のフライシャー・スタジオ風アニメーションを全編手描きで完全再現。Cupheadの魅力を徹底解説。">
+<meta property="og:title" content="Cuphead — 1930年代カートゥーンが蘇る、史上最も美しい激ムズアクション">
+<meta property="og:description" content="1930年代のフライシャー・スタジオ風アニメーションを全編手描きで完全再現。Cupheadの魅力を徹底解説。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #0c0b0e;
+  --bg-primary: #12111a;
+  --bg-card: #1a1824;
+  --bg-card-hover: #211f2e;
+  --parchment: #f5e6c8;
+  --parchment-dark: #d4b896;
+  --gold: #c9a84c;
+  --gold-light: #e8c65e;
+  --gold-glow: 0 0 30px rgba(201,168,76,0.25);
+  --red-accent: #c0392b;
+  --cyan: #4ecdc4;
+  --text-primary: #ece4d4;
+  --text-secondary: #9e958a;
+  --text-dim: #645e54;
+  --border: #2a2635;
+  --border-light: #3a3545;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+/* HEADER */
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(12,11,14,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-emblem { width: 36px; height: 36px; background: linear-gradient(135deg, #1a1520, #0c0b0e); border: 2px solid var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: var(--gold-glow); }
+.logo-emblem::before { content: 'DQ'; font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); text-shadow: 0 0 10px rgba(201,168,76,0.4); }
+.logo-text { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); letter-spacing: 2px; }
+.nav-back { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-secondary); letter-spacing: 1px; transition: 0.3s; }
+.nav-back:hover { color: var(--gold); }
+
+/* HERO */
+.article-hero { padding: 100px 24px 48px; max-width: 800px; margin: 0 auto; }
+.breadcrumb { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 24px; }
+.breadcrumb a { transition: 0.3s; }
+.breadcrumb a:hover { color: var(--gold); }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tag { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; border: 1px solid var(--border-light); color: var(--text-secondary); text-transform: uppercase; }
+.tag.genre { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+.tag.platform { border-color: rgba(78,205,196,0.4); color: var(--cyan); }
+.article-title { font-family: 'Abril Fatface', serif; font-size: clamp(32px, 7vw, 56px); color: var(--parchment); line-height: 1.15; margin-bottom: 8px; }
+.article-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+.article-info { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; display: flex; gap: 24px; flex-wrap: wrap; }
+
+/* HERO IMAGE */
+.hero-image { width: 100%; max-width: 800px; margin: 32px auto 0; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-image img { width: 100%; height: auto; display: block; }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 60%, rgba(12,11,14,0.5) 100%); pointer-events: none; }
+
+/* ARTICLE BODY */
+.article-body { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-body h2 { font-family: 'Abril Fatface', serif; font-size: 28px; color: var(--parchment); margin: 56px 0 20px; padding-left: 16px; border-left: 3px solid var(--gold); }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--parchment-dark); margin: 40px 0 16px; font-weight: 700; }
+.article-body p { font-size: 16px; line-height: 2; color: var(--text-primary); margin-bottom: 24px; }
+.article-body strong { color: var(--parchment); }
+
+/* PULL QUOTE */
+.pull-quote { margin: 48px 0; padding: 32px; border-left: 3px solid var(--red-accent); background: rgba(192,57,43,0.05); }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--parchment); line-height: 1.7; margin: 0; }
+.pull-quote cite { display: block; margin-top: 12px; font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); font-style: normal; letter-spacing: 1px; }
+
+/* INLINE IMAGE */
+.article-image { margin: 40px 0; }
+.article-image img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+.article-image figcaption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+/* VIDEO */
+.video-wrap { margin: 40px 0; }
+.video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); }
+.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+/* SPEC TABLE */
+.spec-table { width: 100%; margin: 40px 0; border-collapse: collapse; }
+.spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.spec-table th { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; width: 140px; white-space: nowrap; }
+.spec-table td { color: var(--text-primary); }
+
+/* BUY LINKS */
+.buy-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.section-heading { font-family: 'Abril Fatface', serif; font-size: 24px; color: var(--parchment); margin-bottom: 8px; }
+.section-sub { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+.buy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.buy-link { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border); transition: 0.3s; font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-primary); letter-spacing: 1px; }
+.buy-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.buy-link .icon { font-size: 20px; }
+.buy-link .name { flex: 1; }
+.buy-link .arrow { color: var(--gold); }
+
+/* RELATED GAMES */
+.related-section { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.related-card { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; transition: 0.3s; display: block; }
+.related-card:hover { background: var(--bg-card-hover); border-color: rgba(201,168,76,0.3); }
+.rc-title { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); margin-bottom: 4px; }
+.rc-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; }
+.rc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+.rc-link { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+.related-card:hover .rc-link { text-decoration: underline; }
+
+/* FOOTER */
+.footer { padding: 48px 24px; border-top: 1px solid var(--border); background: var(--bg-primary); text-align: center; }
+.footer-logo { font-family: 'Abril Fatface', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+.footer-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.footer-copy { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 20px; }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .article-hero { padding: 88px 16px 32px; }
+  .article-body { padding: 32px 16px 60px; }
+  .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+  .article-body p { font-size: 15px; line-height: 1.9; }
+  .pull-quote { padding: 20px; margin: 32px 0; }
+  .pull-quote p { font-size: 17px; }
+  .spec-table th { width: 100px; font-size: 11px; padding: 10px 12px; }
+  .spec-table td { font-size: 13px; padding: 10px 12px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .buy-grid { grid-template-columns: 1fr; }
+  .article-info { flex-direction: column; gap: 8px; }
+  .related-section, .buy-section { padding: 0 16px 60px; }
+  .header { padding: 12px 16px; }
+  .logo-text { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-emblem"></span>
+    <span class="logo-text">DIGQUEST GAMES</span>
+  </a>
+  <a href="/" class="nav-back">← TOP</a>
+</header>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="/">DIGQUEST GAMES</a> / <a href="/">発掘タイトル</a> / Cuphead
+  </div>
+  <div class="meta-tags">
+    <span class="tag genre">RUN & GUN</span>
+    <span class="tag genre">BOSS RUSH</span>
+    <span class="tag platform">Switch</span>
+    <span class="tag platform">PS4</span>
+    <span class="tag platform">Xbox</span>
+    <span class="tag platform">PC</span>
+  </div>
+  <h1 class="article-title">Cuphead</h1>
+  <p class="article-subtitle">1930年代カートゥーンが蘇る、史上最も美しい激ムズアクション</p>
+  <div class="article-info">
+    <span>// 2017 — StudioMDHR</span>
+    <span>DLC: The Delicious Last Course (2022)</span>
+    <span>1-2人プレイ</span>
+  </div>
+</div>
+
+<div class="hero-image">
+  <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/default/dwfb4db2a4/products/D70010000016331/heroBanner/c0c3df07a2e5f1f00bdf5d27ad60e18c4eb20f59a27e2e5010dfde55f8a0b2eb.jpg" alt="Cuphead キービジュアル" loading="lazy">
+</div>
+
+<article class="article-body">
+
+  <h2>概要 — カートゥーンという名の芸術</h2>
+
+  <p>Cupheadは、カナダのインディースタジオ<strong>StudioMDHR</strong>が手がけたラン＆ガンアクションゲームだ。2017年にXbox One / PCで発売され、その後Nintendo Switch（2019年）、PlayStation 4（2020年）にも移植されている。</p>
+
+  <p>本作最大の特徴は、<strong>1930年代のフライシャー・スタジオやウォルト・ディズニー初期のカートゥーンアニメーション</strong>を完全に再現したビジュアルにある。全フレームが手描きのセル画で制作され、背景は水彩画、サウンドトラックはジャズバンドによる生演奏の録り下ろし。すべてが「当時の技法」で作られている。</p>
+
+  <p>ゲームとしては<strong>ボスバトルを中心としたラン＆ガン</strong>で、その難易度は高い。だが、パターンを覚えて攻略する醍醐味と、クリア時の達成感は格別。見た目の愛らしさと裏腹の「鬼畜難易度」こそが、Cupheadの真骨頂だ。</p>
+
+  <div class="video-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/NN-9SQXoi50" title="Cuphead - Official Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">// Cuphead — Official Nintendo Switch Trailer</p>
+  </div>
+
+  <h2>ゲームプレイ — 死んで覚える、踊るように避ける</h2>
+
+  <p>Cupheadの基本操作はシンプルだ。<strong>ショット、ジャンプ、ダッシュ、パリィ</strong>——この4つのアクションを組み合わせて、画面を埋め尽くすボスの攻撃を掻い潜る。</p>
+
+  <p>ゲーム全体の約90%がボスバトルで構成されている。各ボスには固有のパターンがあり、フェーズが進むにつれて攻撃は激化。<strong>Simple / Regular / Expert</strong>の3段階の難易度があるが、Regularですら何十回も死ぬのは当たり前だ。</p>
+
+  <p>しかし、ここが重要なポイント——Cupheadは<strong>「理不尽」ではない</strong>。すべての攻撃にはパターンがあり、パリィで切り返せるピンク色の弾が必ず用意されている。死ぬたびに学び、少しずつ前進する。その達成感が、プレイヤーを何度もリトライに向かわせる。</p>
+
+  <figure class="article-image">
+    <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/default/dw6e0f6dc5/products/D70010000016331/screenshot/93cc8cda44e5b45e4e5f25c20e94511b01dcd65f7e4c4d0e501fe2cbbf2cddef.jpg" alt="Cuphead ゲームプレイ" loading="lazy">
+    <figcaption>// ボス戦では画面を埋め尽くす弾幕を掻い潜る</figcaption>
+  </figure>
+
+  <div class="pull-quote">
+    <p>すべてのシーンがマスターワーク（傑作）だ</p>
+    <cite>— IGN レビューより</cite>
+  </div>
+
+  <h2>アートとサウンド — なぜ「本物」なのか</h2>
+
+  <p>Cupheadの制作には<strong>約7年</strong>の歳月が費やされた。StudioMDHRの創設者であるチャドとジャレッドのモルデンハウアー兄弟は、自宅を抵当に入れてまで開発を続けたという。</p>
+
+  <p>そのこだわりは徹底している。キャラクターの動きはすべて<strong>紙の上に鉛筆で描かれ、インクで清書され、セル画として着彩</strong>された。デジタル処理に頼らず、1930年代と同じ工程で制作されている。背景は水彩画で描かれ、カメラの前でスキャンされる。</p>
+
+  <p>サウンドトラックも同様だ。<strong>フルビッグバンドによる生演奏</strong>で、ジャズ、ラグタイム、ブルースの要素を組み合わせた楽曲は、ゲーム音楽史上最高峰との評価を受けている。</p>
+
+  <figure class="article-image">
+    <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/default/dw75b1e78e/products/D70010000016331/screenshot/ce5f5b2ff8e4badd22560e5e7e5e97ced9fd116e5f2f71f5aa49d8e2e4f8fbdc.jpg" alt="Cuphead アートワーク" loading="lazy">
+    <figcaption>// 全フレーム手描き＋水彩画背景。1930年代の技法をそのまま再現</figcaption>
+  </figure>
+
+  <h3>DLC「The Delicious Last Course」（2022年）</h3>
+
+  <p>2022年に配信されたDLC拡張パックでは、新プレイアブルキャラクター<strong>Ms. Chalice</strong>が追加され、新ボスや新武器も多数登場。本編の品質を維持したまま、さらに洗練されたボスデザインが楽しめる。DLCの発売にあわせ、日本ではスーパーデラックスゲームズから天野喜孝氏によるパッケージイラストの物理版も発売された。</p>
+
+  <div class="video-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/BdQMDmuoezc" title="Cuphead DLC - The Delicious Last Course Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">// The Delicious Last Course — DLC Launch Trailer</p>
+  </div>
+
+  <h2>購入ガイド — 今すぐ遊べるプラットフォーム</h2>
+
+  <table class="spec-table">
+    <tr><th>タイトル</th><td>Cuphead</td></tr>
+    <tr><th>開発</th><td>StudioMDHR Entertainment Inc.</td></tr>
+    <tr><th>発売日</th><td>2017年9月29日（Xbox/PC）/ 2019年4月18日（Switch）/ 2020年7月28日（PS4）</td></tr>
+    <tr><th>ジャンル</th><td>ラン＆ガン / ボスラッシュ / プラットフォーマー</td></tr>
+    <tr><th>プレイ人数</th><td>1〜2人（ローカルCo-op）</td></tr>
+    <tr><th>対応機種</th><td>Nintendo Switch / PlayStation 4 / Xbox One / PC（Steam）</td></tr>
+    <tr><th>DLC</th><td>The Delicious Last Course（2022年6月30日）</td></tr>
+    <tr><th>価格</th><td>約2,000円前後（プラットフォームにより異なる）</td></tr>
+    <tr><th>日本語</th><td>◯（UI・字幕）</td></tr>
+    <tr><th>CERO</th><td>A（全年齢対象）</td></tr>
+  </table>
+
+</article>
+
+<section class="buy-section">
+  <h2 class="section-heading">購入リンク</h2>
+  <p class="section-sub">// Where to Buy</p>
+  <div class="buy-grid">
+    <a href="https://store-jp.nintendo.com/item/software/D70010000016331" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🎮</span><span class="name">Nintendo eShop</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/268910/Cuphead/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">💻</span><span class="name">Steam</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://www.playstation.com/ja-jp/games/cuphead/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🕹️</span><span class="name">PlayStation Store</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://www.amazon.co.jp/dp/B0BQ22C587" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">📦</span><span class="name">Amazon.co.jp（物理版）</span><span class="arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="related-section">
+  <h2 class="section-heading">Cupheadの源流 — 影響を受けたゲームたち</h2>
+  <p class="section-sub">// Games that influenced Cuphead</p>
+  <div class="related-grid">
+    <a href="https://store.steampowered.com/app/1018020/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Contra</div>
+      <div class="rc-sub">1987 — Konami / NES, SFC ほか</div>
+      <p class="rc-desc">ラン＆ガンの始祖。弾幕を掻い潜りながら進む高難度アクションの原型を確立。Cupheadの「撃って避ける」DNAの直系先祖。</p>
+      <span class="rc-link">Steam (Anniversary Collection) ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/71117/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Gunstar Heroes</div>
+      <div class="rc-sub">1993 — Treasure / Mega Drive</div>
+      <p class="rc-desc">トレジャーのデビュー作にしてラン＆ガンの金字塔。武器合成と狂気のボス戦は、Cupheadに最も直接的な影響を与えた一本。</p>
+      <span class="rc-link">Steam (Mega Drive Classics) ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/366250/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Metal Slug</div>
+      <div class="rc-sub">1996 — Nazca / Neo Geo ほか</div>
+      <p class="rc-desc">ドット絵アニメーションの極致。画面を覆い尽くす巨大ボスの設計は、Cupheadのボスデザインに大きな影響を与えている。</p>
+      <span class="rc-link">Steam (Metal Slug) ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/363440/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Mega Man Legacy Collection</div>
+      <div class="rc-sub">1987 — Capcom / NES ほか</div>
+      <p class="rc-desc">ステージ選択制とボス攻略の楽しさの原型。各ワールドがボスのテーマで統一される構造は、CupheadのInkwell Islesにも通じる。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/517790/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Alien Soldier</div>
+      <div class="rc-sub">1995 — Treasure / Mega Drive</div>
+      <p class="rc-desc">ほぼ全編がボスラッシュという異色のアクション。Cupheadの「ボスが主役」という設計思想に最も近い先駆者。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/423230/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Bendy and the Ink Machine</div>
+      <div class="rc-sub">2017 — Kindly Beast / PC ほか</div>
+      <p class="rc-desc">同じく1930年代のラバーホース・アニメーション美学にインスパイアされたホラーゲーム。レトロアニメ文化への敬意が共通する。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">DIGQUEST GAMES</div>
+  <p class="footer-desc">知る人ぞ知るゲームの名作を発掘するアーカイブメディア。</p>
+  <p class="footer-desc" style="font-size:11px;letter-spacing:1px;font-family:'Courier Prime',monospace;">a plucks world media</p>
+  <p class="footer-copy">© 2026 DIGQUEST GAMES / plucks world — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
