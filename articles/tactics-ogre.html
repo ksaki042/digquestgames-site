@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タクティクスオウガ — SRPG史上最も重い選択、松野泰己の最高傑作 | DIGQUEST GAMES</title>
+<meta name="description" content="民族紛争を舞台に「正義とは何か」を問い続けるSRPGの金字塔。松野泰己がQuestとともに生み出したタクティクスオウガの魅力を徹底解説。">
+<meta property="og:title" content="タクティクスオウガ — SRPG史上最も重い選択、松野泰己の最高傑作">
+<meta property="og:description" content="民族紛争を舞台に「正義とは何か」を問い続けるSRPGの金字塔。タクティクスオウガの魅力を徹底解説。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #0c0b0e;
+  --bg-primary: #12111a;
+  --bg-card: #1a1824;
+  --bg-card-hover: #211f2e;
+  --parchment: #f5e6c8;
+  --parchment-dark: #d4b896;
+  --gold: #c9a84c;
+  --gold-light: #e8c65e;
+  --gold-glow: 0 0 30px rgba(201,168,76,0.25);
+  --red-accent: #c0392b;
+  --cyan: #4ecdc4;
+  --text-primary: #ece4d4;
+  --text-secondary: #9e958a;
+  --text-dim: #645e54;
+  --border: #2a2635;
+  --border-light: #3a3545;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(12,11,14,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-emblem { width: 36px; height: 36px; background: linear-gradient(135deg, #1a1520, #0c0b0e); border: 2px solid var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: var(--gold-glow); }
+.logo-emblem::before { content: 'DQ'; font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); text-shadow: 0 0 10px rgba(201,168,76,0.4); }
+.logo-text { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); letter-spacing: 2px; }
+.nav-back { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-secondary); letter-spacing: 1px; transition: 0.3s; }
+.nav-back:hover { color: var(--gold); }
+
+.article-hero { padding: 100px 24px 48px; max-width: 800px; margin: 0 auto; }
+.breadcrumb { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 24px; }
+.breadcrumb a { transition: 0.3s; }
+.breadcrumb a:hover { color: var(--gold); }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tag { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; border: 1px solid var(--border-light); color: var(--text-secondary); text-transform: uppercase; }
+.tag.genre { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+.tag.platform { border-color: rgba(78,205,196,0.4); color: var(--cyan); }
+.article-title { font-family: 'Abril Fatface', serif; font-size: clamp(28px, 6vw, 52px); color: var(--parchment); line-height: 1.15; margin-bottom: 8px; }
+.article-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+.article-info { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; display: flex; gap: 24px; flex-wrap: wrap; }
+
+.hero-image { width: 100%; max-width: 800px; margin: 32px auto 0; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-image img { width: 100%; height: auto; display: block; }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 60%, rgba(12,11,14,0.5) 100%); pointer-events: none; }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-body h2 { font-family: 'Abril Fatface', serif; font-size: 28px; color: var(--parchment); margin: 56px 0 20px; padding-left: 16px; border-left: 3px solid var(--gold); }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--parchment-dark); margin: 40px 0 16px; font-weight: 700; }
+.article-body p { font-size: 16px; line-height: 2; color: var(--text-primary); margin-bottom: 24px; }
+.article-body strong { color: var(--parchment); }
+
+.pull-quote { margin: 48px 0; padding: 32px; border-left: 3px solid var(--red-accent); background: rgba(192,57,43,0.05); }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--parchment); line-height: 1.7; margin: 0; }
+.pull-quote cite { display: block; margin-top: 12px; font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); font-style: normal; letter-spacing: 1px; }
+
+.video-wrap { margin: 40px 0; }
+.video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); }
+.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+.spec-table { width: 100%; margin: 40px 0; border-collapse: collapse; }
+.spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.spec-table th { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; width: 140px; white-space: nowrap; }
+.spec-table td { color: var(--text-primary); }
+
+.buy-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.section-heading { font-family: 'Abril Fatface', serif; font-size: 24px; color: var(--parchment); margin-bottom: 8px; }
+.section-sub { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+.buy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.buy-link { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border); transition: 0.3s; font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-primary); letter-spacing: 1px; }
+.buy-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.buy-link .icon { font-size: 20px; }
+.buy-link .name { flex: 1; }
+.buy-link .arrow { color: var(--gold); }
+
+.related-section { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.related-card { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; transition: 0.3s; display: block; }
+.related-card:hover { background: var(--bg-card-hover); border-color: rgba(201,168,76,0.3); }
+.rc-title { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); margin-bottom: 4px; }
+.rc-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; }
+.rc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+.rc-link { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+.related-card:hover .rc-link { text-decoration: underline; }
+
+.footer { padding: 48px 24px; border-top: 1px solid var(--border); background: var(--bg-primary); text-align: center; }
+.footer-logo { font-family: 'Abril Fatface', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+.footer-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.footer-copy { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 20px; }
+
+@media (max-width: 600px) {
+  .article-hero { padding: 88px 16px 32px; }
+  .article-body { padding: 32px 16px 60px; }
+  .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+  .article-body p { font-size: 15px; line-height: 1.9; }
+  .pull-quote { padding: 20px; margin: 32px 0; }
+  .pull-quote p { font-size: 17px; }
+  .spec-table th { width: 100px; font-size: 11px; padding: 10px 12px; }
+  .spec-table td { font-size: 13px; padding: 10px 12px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .buy-grid { grid-template-columns: 1fr; }
+  .article-info { flex-direction: column; gap: 8px; }
+  .related-section, .buy-section { padding: 0 16px 60px; }
+  .header { padding: 12px 16px; }
+  .logo-text { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-emblem"></span>
+    <span class="logo-text">DIGQUEST GAMES</span>
+  </a>
+  <a href="/" class="nav-back">← TOP</a>
+</header>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="/">DIGQUEST GAMES</a> / <a href="/">発掘タイトル</a> / Tactics Ogre
+  </div>
+  <div class="meta-tags">
+    <span class="tag genre">SRPG</span>
+    <span class="tag genre">POLITICAL</span>
+    <span class="tag platform">SFC</span>
+    <span class="tag platform">PSP</span>
+    <span class="tag platform">Switch</span>
+    <span class="tag platform">PS5</span>
+    <span class="tag platform">PC</span>
+  </div>
+  <h1 class="article-title">Tactics Ogre</h1>
+  <p class="article-subtitle">SRPG史上最も重い選択——Let Us Cling Together</p>
+  <div class="article-info">
+    <span>// 1995 — Quest / Square Enix</span>
+    <span>Reborn: 2022（Switch・PS4・PS5・PC）</span>
+    <span>1人プレイ</span>
+  </div>
+</div>
+
+<div class="hero-image">
+  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1702170/header.jpg" alt="タクティクスオウガ Reborn キービジュアル" loading="lazy">
+</div>
+
+<article class="article-body">
+
+  <h2>概要 — 正義とは何か、問い続けるSRPGの金字塔</h2>
+
+  <p>タクティクスオウガ Let Us Cling Togetherは、<strong>松野泰己</strong>がQuestで制作し1995年にスーパーファミコンで発売されたシミュレーションRPGだ。PS1版（1996年）、PSPリメイク版（2010年）を経て、2022年には<strong>「タクティクスオウガ リボーン（Reborn）」</strong>としてNintendo Switch / PS4・5 / PCで現行機プレイが可能となった。</p>
+
+  <p>物語の舞台は架空の群島国家ヴァレリア。<strong>ウォルスタ族・ガルガスタン族・バクラム族</strong>の3民族が複雑な権力争いを繰り広げる中、主人公デニムは己の信念と組織の論理の狭間で引き裂かれる。このゲームに「正しい選択」は存在しない——どの道を選んでも、何かを失う。</p>
+
+  <p>発売から30年が経過した今なお「SRPGシナリオの最高傑作」として名前が挙がる本作は、ゲームがいかにして政治と倫理を語れるかを証明した歴史的作品だ。</p>
+
+  <div class="video-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/Xs6Tj9Ic5aY" title="Tactics Ogre: Reborn - Announcement Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">// Tactics Ogre: Reborn — Announcement Trailer (Square Enix, 2022)</p>
+  </div>
+
+  <h2>ゲームプレイ — 戦術の深み、クラスと陣形の無限の可能性</h2>
+
+  <p>バトルはグリッドマップ上で展開するタクティカルバトルだ。<strong>ユニットのクラス（職業）</strong>、装備、スキル、属性、陣形——多彩な要素を組み合わせて戦略を立てる。地形の高低差、風向き（弓矢に影響）、天候まで戦局に影響するため、マップを読む力が問われる。</p>
+
+  <p>リボーン版では<strong>レベルスケーリング</strong>と<strong>TACTICSシステム</strong>（旧PSP版のCHARIOTを進化させたもの）が導入され、直近の行動を最大50手まで遡れる。「この選択を変えていたら」というSRPGにつきもののジレンマが、システムとして解消された。しかしそれはゲームを簡単にするのではなく、<strong>より深い戦略を模索する自由</strong>をプレイヤーに与えた。</p>
+
+  <p>キャラクターの死は永続的——<strong>パーマデス</strong>が基本だ（リボーンでは復活手段あり）。仲間の死はシナリオにも影響し、プレイヤーに感情的な重みをもたらす。</p>
+
+  <div class="pull-quote">
+    <p>我々の正義は、彼らの悪だ。歴史はつねに、生き残った者が書く</p>
+    <cite>— タクティクスオウガ 劇中より</cite>
+  </div>
+
+  <h2>シナリオ — バルマムッサの選択、そして3つのルート</h2>
+
+  <p>本作最大の岐路が<strong>「バルマムッサの虐殺」</strong>だ。物語中盤、デニムは敵対勢力に責任をなすりつけるために、自軍によって民間人を虐殺する命令を受ける。これに従うか、拒否するか——この一点がゲーム全体を<strong>LOWルート（法の道）・CHAOSルート（混沌の道）・NETRALルート（中立の道）</strong>の3分岐に引き裂く。</p>
+
+  <p>LOWルートとCHAOSルートでは敵も味方も、そして主人公デニム自身も異なる顔を見せる。どちらが「正しい」かは分からない。プレイし終わった後に残るのは、割り切れない複雑な余韻だ。</p>
+
+  <h3>松野泰己という天才——その後の作品群</h3>
+
+  <p>松野泰己はタクティクスオウガの後、スクウェアに移籍して<strong>ファイナルファンタジータクティクス（1997）</strong>と<strong>ファイナルファンタジーXII（2006）</strong>を手がけた。いずれもシナリオの複雑さと政治的テーマで高い評価を受け、「松野作品」というカテゴリが確立された。2022年には<strong>Triangle Strategy</strong>の監修として再び大舞台に立った。</p>
+
+  <h2>音楽 — 崎元仁と岩田匡治が生んだ、叙事詩の音</h2>
+
+  <p><strong>崎元仁</strong>と<strong>岩田匡治</strong>によるサウンドトラックは、90年代SFC音楽の頂点のひとつだ。戦闘曲の重厚さ、悲劇のシーンで流れる静謐なBGM、エンディングへ向けての壮大な展開——すべてが物語の感情を増幅させる。リボーン版では全曲をフルオーケストラで録り直したアレンジ版と、原曲版の両方が収録されており、好みで切り替えができる。</p>
+
+  <h2>購入ガイド — 今すぐ遊べるプラットフォーム</h2>
+
+  <table class="spec-table">
+    <tr><th>タイトル</th><td>タクティクスオウガ リボーン / Tactics Ogre: Reborn</td></tr>
+    <tr><th>開発</th><td>Quest（原作）/ Square Enix（リボーン）</td></tr>
+    <tr><th>発売日</th><td>1995年（SFC）/ 2010年（PSPリメイク）/ 2022年11月11日（Reborn）</td></tr>
+    <tr><th>ジャンル</th><td>シミュレーションRPG（SRPG）</td></tr>
+    <tr><th>プレイ人数</th><td>1人</td></tr>
+    <tr><th>対応機種</th><td>Nintendo Switch / PS4 / PS5 / PC（Steam）</td></tr>
+    <tr><th>クリア時間</th><td>約50〜80時間（全ルート制覇は150時間超）</td></tr>
+    <tr><th>日本語</th><td>◯（フルボイス対応）</td></tr>
+    <tr><th>CERO</th><td>C（15歳以上対象）</td></tr>
+  </table>
+
+</article>
+
+<section class="buy-section">
+  <h2 class="section-heading">購入リンク</h2>
+  <p class="section-sub">// Where to Buy</p>
+  <div class="buy-grid">
+    <a href="https://store.steampowered.com/app/1702170/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">💻</span><span class="name">Steam</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://store-jp.nintendo.com/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🎮</span><span class="name">Nintendo eShop</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://store.playstation.com/ja-jp/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🕹️</span><span class="name">PlayStation Store</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://www.amazon.co.jp/s?k=タクティクスオウガ+リボーン" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">📦</span><span class="name">Amazon.co.jp（パッケージ版）</span><span class="arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="related-section">
+  <h2 class="section-heading">タクティクスオウガの系譜</h2>
+  <p class="section-sub">// Games in the lineage of Tactics Ogre</p>
+  <div class="related-grid">
+    <a href="https://store.steampowered.com/app/416020/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Final Fantasy Tactics: WotL</div>
+      <div class="rc-sub">1997 / 2007 — Square / Square Enix</div>
+      <p class="rc-desc">松野泰己がスクウェアで制作したタクオガの直系後継作。宗教と貴族の陰謀を背景にした重厚な政治劇で、タクオガと双璧をなすSRPGの金字塔。</p>
+      <span class="rc-link">Steam（War of the Lions）↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1722710/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Triangle Strategy</div>
+      <div class="rc-sub">2022 — Square Enix</div>
+      <p class="rc-desc">松野泰己が監修したHD-2D戦術RPG。3勢力の複雑な外交と、複数エンディングの構造はタクオガのDNAを現代に蘇らせた。Switchで遊べる最良の後継者。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/837340/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Fell Seal: Arbiter's Mark</div>
+      <div class="rc-sub">2019 — 6 Eyes Studio</div>
+      <p class="rc-desc">タクティクスオウガ / FFTに強くインスパイアされたインディーSRPG。クラスシステムと重厚なシナリオで、洋ゲーが本気でタクオガに挑んだ傑作。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1293310/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Pathfinder: Wrath of the Righteous</div>
+      <div class="rc-sub">2021 — Owlcat Games</div>
+      <p class="rc-desc">道徳的選択の重さとパーティ戦略の深さを持つCRPG。タクオガの「どちらも正しく、どちらも間違っている」という複雑な倫理構造を西洋RPGで体験したい人に。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/900883/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Wargroove</div>
+      <div class="rc-sub">2019 — Chucklefish</div>
+      <p class="rc-desc">ファミコンウォーズ系のSRPGをインディーが現代的に再解釈。タクオガほど重くなく、SRPGへの入門として最適な一本。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/742820/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Mutant Year Zero: Road to Eden</div>
+      <div class="rc-sub">2018 — The Bearded Ladies</div>
+      <p class="rc-desc">XCOM系の戦術SRPGに探索要素を加えた意欲作。タクオガ的な選択の重さをポスト・アポカリプスの世界で体験できる異色の傑作。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">DIGQUEST GAMES</div>
+  <p class="footer-desc">知る人ぞ知るゲームの名作を発掘するアーカイブメディア。</p>
+  <p class="footer-desc" style="font-size:11px;letter-spacing:1px;font-family:'Courier Prime',monospace;">a plucks world media</p>
+  <p class="footer-copy">© 2026 DIGQUEST GAMES / plucks world — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

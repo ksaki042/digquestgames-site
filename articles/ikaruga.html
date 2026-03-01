@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>斑鳩 IKARUGA — 白と黒が織りなす、シューティングゲームの詩 | DIGQUEST GAMES</title>
+<meta name="description" content="属性切り替えという唯一無二のシステムが生んだ弾幕STGの芸術——トレジャーの最高傑作・斑鳩の魅力を徹底解説。">
+<meta property="og:title" content="斑鳩 IKARUGA — 白と黒が織りなす、シューティングゲームの詩">
+<meta property="og:description" content="属性切り替えという唯一無二のシステムが生んだ弾幕STGの芸術。トレジャーの最高傑作を徹底解説。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #0c0b0e;
+  --bg-primary: #12111a;
+  --bg-card: #1a1824;
+  --bg-card-hover: #211f2e;
+  --parchment: #f5e6c8;
+  --parchment-dark: #d4b896;
+  --gold: #c9a84c;
+  --gold-light: #e8c65e;
+  --gold-glow: 0 0 30px rgba(201,168,76,0.25);
+  --red-accent: #c0392b;
+  --cyan: #4ecdc4;
+  --text-primary: #ece4d4;
+  --text-secondary: #9e958a;
+  --text-dim: #645e54;
+  --border: #2a2635;
+  --border-light: #3a3545;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(12,11,14,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-emblem { width: 36px; height: 36px; background: linear-gradient(135deg, #1a1520, #0c0b0e); border: 2px solid var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: var(--gold-glow); }
+.logo-emblem::before { content: 'DQ'; font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); text-shadow: 0 0 10px rgba(201,168,76,0.4); }
+.logo-text { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); letter-spacing: 2px; }
+.nav-back { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-secondary); letter-spacing: 1px; transition: 0.3s; }
+.nav-back:hover { color: var(--gold); }
+
+.article-hero { padding: 100px 24px 48px; max-width: 800px; margin: 0 auto; }
+.breadcrumb { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 24px; }
+.breadcrumb a { transition: 0.3s; }
+.breadcrumb a:hover { color: var(--gold); }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tag { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; border: 1px solid var(--border-light); color: var(--text-secondary); text-transform: uppercase; }
+.tag.genre { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+.tag.platform { border-color: rgba(78,205,196,0.4); color: var(--cyan); }
+.article-title { font-family: 'Abril Fatface', serif; font-size: clamp(32px, 7vw, 56px); color: var(--parchment); line-height: 1.15; margin-bottom: 8px; }
+.article-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+.article-info { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; display: flex; gap: 24px; flex-wrap: wrap; }
+
+.hero-image { width: 100%; max-width: 800px; margin: 32px auto 0; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-image img { width: 100%; height: auto; display: block; }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 60%, rgba(12,11,14,0.5) 100%); pointer-events: none; }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-body h2 { font-family: 'Abril Fatface', serif; font-size: 28px; color: var(--parchment); margin: 56px 0 20px; padding-left: 16px; border-left: 3px solid var(--gold); }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--parchment-dark); margin: 40px 0 16px; font-weight: 700; }
+.article-body p { font-size: 16px; line-height: 2; color: var(--text-primary); margin-bottom: 24px; }
+.article-body strong { color: var(--parchment); }
+
+.pull-quote { margin: 48px 0; padding: 32px; border-left: 3px solid var(--red-accent); background: rgba(192,57,43,0.05); }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--parchment); line-height: 1.7; margin: 0; }
+.pull-quote cite { display: block; margin-top: 12px; font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); font-style: normal; letter-spacing: 1px; }
+
+.video-wrap { margin: 40px 0; }
+.video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); }
+.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+.spec-table { width: 100%; margin: 40px 0; border-collapse: collapse; }
+.spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.spec-table th { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; width: 140px; white-space: nowrap; }
+.spec-table td { color: var(--text-primary); }
+
+.buy-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.section-heading { font-family: 'Abril Fatface', serif; font-size: 24px; color: var(--parchment); margin-bottom: 8px; }
+.section-sub { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+.buy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.buy-link { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border); transition: 0.3s; font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-primary); letter-spacing: 1px; }
+.buy-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.buy-link .icon { font-size: 20px; }
+.buy-link .name { flex: 1; }
+.buy-link .arrow { color: var(--gold); }
+
+.related-section { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.related-card { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; transition: 0.3s; display: block; }
+.related-card:hover { background: var(--bg-card-hover); border-color: rgba(201,168,76,0.3); }
+.rc-title { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); margin-bottom: 4px; }
+.rc-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; }
+.rc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+.rc-link { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+.related-card:hover .rc-link { text-decoration: underline; }
+
+.footer { padding: 48px 24px; border-top: 1px solid var(--border); background: var(--bg-primary); text-align: center; }
+.footer-logo { font-family: 'Abril Fatface', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+.footer-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.footer-copy { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 20px; }
+
+@media (max-width: 600px) {
+  .article-hero { padding: 88px 16px 32px; }
+  .article-body { padding: 32px 16px 60px; }
+  .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+  .article-body p { font-size: 15px; line-height: 1.9; }
+  .pull-quote { padding: 20px; margin: 32px 0; }
+  .pull-quote p { font-size: 17px; }
+  .spec-table th { width: 100px; font-size: 11px; padding: 10px 12px; }
+  .spec-table td { font-size: 13px; padding: 10px 12px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .buy-grid { grid-template-columns: 1fr; }
+  .article-info { flex-direction: column; gap: 8px; }
+  .related-section, .buy-section { padding: 0 16px 60px; }
+  .header { padding: 12px 16px; }
+  .logo-text { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-emblem"></span>
+    <span class="logo-text">DIGQUEST GAMES</span>
+  </a>
+  <a href="/" class="nav-back">← TOP</a>
+</header>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="/">DIGQUEST GAMES</a> / <a href="/">発掘タイトル</a> / 斑鳩
+  </div>
+  <div class="meta-tags">
+    <span class="tag genre">SHOOTING</span>
+    <span class="tag genre">PUZZLE</span>
+    <span class="tag platform">DC</span>
+    <span class="tag platform">GC</span>
+    <span class="tag platform">Switch</span>
+    <span class="tag platform">PS4</span>
+    <span class="tag platform">PC</span>
+  </div>
+  <h1 class="article-title">IKARUGA</h1>
+  <p class="article-subtitle">白と黒が織りなす、シューティングゲームの詩</p>
+  <div class="article-info">
+    <span>// 2001 — Treasure</span>
+    <span>DC / GC / Switch / PS4 / Steam</span>
+    <span>1〜2人プレイ</span>
+  </div>
+</div>
+
+<div class="hero-image">
+  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/306950/header.jpg" alt="斑鳩 IKARUGA キービジュアル" loading="lazy">
+</div>
+
+<article class="article-body">
+
+  <h2>概要 — 弾幕を「解く」縦スクロールシューティング</h2>
+
+  <p>斑鳩は、<strong>トレジャー</strong>が開発した縦スクロールシューティングゲームだ。2001年にナムコのアーケードとして稼働を開始し、同年にDreamcastへ移植。2003年にはNintendo GameCubeにも移植され、2014年にはSteamでPC版が配信。2018年にはNintendo SwitchとPlayStation 4にも対応し、現在でも現行機で遊べる。</p>
+
+  <p>本作の核心は<strong>「ポラリティ（属性）切り替え」</strong>システムだ。自機は白と黒の2属性を切り替えることができ、<strong>同属性の弾を吸収してチャージゲージを溜め、異属性の敵に2倍ダメージ</strong>を与えることができる。弾幕を「避ける」のではなく「吸収と回避を使い分ける」——このシステムが、斑鳩をSTGの歴史に唯一無二の存在として刻んだ。</p>
+
+  <p>ゲーム全5章。一見シンプルに見えるルールが、章を重ねるごとに深みを増し、最終的には「すべての弾幕がパズルだった」と気づかされる。</p>
+
+  <div class="video-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/G4gGLlkqGbQ" title="Ikaruga Nintendo Switch Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">// IKARUGA — Nintendo Switch Announcement Trailer</p>
+  </div>
+
+  <h2>ゲームプレイ — 吸収と破壊、陰陽の連鎖</h2>
+
+  <p>操作は非常にシンプルだ。<strong>移動・ショット・属性切り替え</strong>の3アクションのみ。しかしこの3つの組み合わせで生まれる戦略の深さは底知れない。</p>
+
+  <p>敵は白と黒の2種類に分類され、それぞれ対応した属性の弾を放つ。同属性の弾を5発吸収すると<strong>ホーミングレーザー</strong>を発射でき、敵を一気に殲滅できる。しかし吸収に頼りすぎると、素のショット火力が落ちる。吸収と回避のバランスをリアルタイムで判断し続けることが、高スコアへの道だ。</p>
+
+  <p><strong>チェーンコンボ</strong>は本作最大の特徴のひとつ。同属性の敵3機を連続撃破するたびにチェーンカウントが増加し、3連鎖×8セット（合計72機）でパーフェクトチェーン達成となる。これを全章でノーミス達成する「絶対ノーミスパーフェクトチェーン」は、世界中のプレイヤーが今なお挑戦し続ける至高の課題だ。</p>
+
+  <div class="pull-quote">
+    <p>斑鳩は、シューティングゲームというジャンルを超えて「ゲームデザインとは何か」を教えてくれる</p>
+    <cite>— ゲームデザイナー・岩井俊雄氏</cite>
+  </div>
+
+  <h2>ビジュアルと世界観 — 和の静謐と機械の暴力</h2>
+
+  <p>斑鳩のビジュアルは白と黒を基調とした禅的なデザインで統一されている。鳥の名を冠したステージ、仏教・神道を想起させる建築物、無機質な機械兵器と精神的な世界観の融合——これがプレイヤーに「美しい戦場」の体験を与える。</p>
+
+  <p>同じくトレジャーが開発した<strong>ラジアントシルバーガン</strong>（1998年）の精神的後継作として位置づけられており、世界観を共有する部分もある。ラジアントシルバーガンのファンにとって、斑鳩は「さらに洗練されたトレジャーの答え」だ。</p>
+
+  <h3>2人協力プレイの変態的な深み</h3>
+
+  <p>斑鳩は<strong>2人同時プレイ</strong>に対応しているが、これが本作のカオスをさらに加速させる。2人の自機が異なる属性を担当し、連携しながら弾幕を処理する——理論上は最強の布陣だが、互いの動きを把握しながら属性を合わせ続けることは至難の業だ。2人プレイの動画はYouTubeでも多数上がっており、それ自体がエンターテインメントと化している。</p>
+
+  <h2>購入ガイド — 今すぐ遊べるプラットフォーム</h2>
+
+  <table class="spec-table">
+    <tr><th>タイトル</th><td>斑鳩 / IKARUGA</td></tr>
+    <tr><th>開発</th><td>Treasure</td></tr>
+    <tr><th>発売日</th><td>2001年（AC）/ 2001年（DC）/ 2003年（GC）/ 2014年（PC）/ 2018年（Switch・PS4）</td></tr>
+    <tr><th>ジャンル</th><td>縦スクロールシューティング</td></tr>
+    <tr><th>プレイ人数</th><td>1〜2人（ローカルCo-op）</td></tr>
+    <tr><th>対応機種</th><td>Nintendo Switch / PS4 / PC（Steam）/ Dreamcast / GameCube</td></tr>
+    <tr><th>クリア時間</th><td>約30〜60分（1周）/ スコアアタックは無限</td></tr>
+    <tr><th>難易度</th><td>EASY / NORMAL / HARD（EASYでも十分に手ごわい）</td></tr>
+    <tr><th>日本語</th><td>◯</td></tr>
+    <tr><th>CERO</th><td>A（全年齢対象）</td></tr>
+  </table>
+
+</article>
+
+<section class="buy-section">
+  <h2 class="section-heading">購入リンク</h2>
+  <p class="section-sub">// Where to Buy</p>
+  <div class="buy-grid">
+    <a href="https://store.steampowered.com/app/306950/Ikaruga/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">💻</span><span class="name">Steam</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://store-jp.nintendo.com/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🎮</span><span class="name">Nintendo eShop</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://store.playstation.com/ja-jp/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🕹️</span><span class="name">PlayStation Store</span><span class="arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="related-section">
+  <h2 class="section-heading">斑鳩の源流と後継</h2>
+  <p class="section-sub">// Games in the lineage of IKARUGA</p>
+  <div class="related-grid">
+    <a href="https://store.steampowered.com/app/229220/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Radiant Silvergun</div>
+      <div class="rc-sub">1998 — Treasure / Arcade, Saturn, Xbox360</div>
+      <p class="rc-desc">斑鳩の精神的前作。7種の武器を使い分ける複雑なシステムと壮大なシナリオSTGの金字塔。斑鳩のルーツを知るなら必須の一本。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/377860/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Mushihimesama</div>
+      <div class="rc-sub">2004 — Cave / Arcade, PC</div>
+      <p class="rc-desc">Caveが誇る弾幕STGの傑作。和風×昆虫×弾幕という独特の世界観で、斑鳩とはまた異なる弾幕美を体験できる。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1935320/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Neko Navy - Daydream Edition</div>
+      <div class="rc-sub">2015 — Neko Navy Team</div>
+      <p class="rc-desc">斑鳩ライクな属性システムを採用した現代インディーSTG。斑鳩の文法を受け継ぎつつ、独自の世界観で展開する隠れた良作。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1097300/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Danmaku Unlimited 3</div>
+      <div class="rc-sub">2017 — Doragon Entertainment</div>
+      <p class="rc-desc">弾幕吸収システムを独自に発展させたSTG。斑鳩の「吸収する快感」を現代的センスで昇華した、STGファン必携の作品。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1390590/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Rolling Gunner</div>
+      <div class="rc-sub">2019 — mebius</div>
+      <p class="rc-desc">日本の同人STGから商業展開した傑作。縦スクロールの爽快感と骨太な難易度設計は、斑鳩のDNAを感じる現代のSTG。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1236060/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Gunvein</div>
+      <div class="rc-sub">2022 — mebius</div>
+      <p class="rc-desc">Rolling Gunnerの後継作。よりスタイリッシュなビジュアルと進化したシステムで、縦STGの現在地を示す。斑鳩ファンへのおすすめ度最高。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">DIGQUEST GAMES</div>
+  <p class="footer-desc">知る人ぞ知るゲームの名作を発掘するアーカイブメディア。</p>
+  <p class="footer-desc" style="font-size:11px;letter-spacing:1px;font-family:'Courier Prime',monospace;">a plucks world media</p>
+  <p class="footer-copy">© 2026 DIGQUEST GAMES / plucks world — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

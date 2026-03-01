@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メタルウルフカオス XD — アメリカ大統領がロボで戦う、フロムの伝説的バカゲー | DIGQUEST GAMES</title>
+<meta name="description" content="ダークソウル以前のフロム・ソフトウェアが放った伝説のメカアクション。元Xbox専売の入手困難タイトルが2019年にXD版として世界に解放された。">
+<meta property="og:title" content="メタルウルフカオス XD — アメリカ大統領がロボで戦う、フロムの伝説的バカゲー">
+<meta property="og:description" content="ダークソウル以前のフロム・ソフトウェアが放った伝説のメカアクション。2019年XD版で世界に解放された名作の魅力を徹底解説。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #0c0b0e;
+  --bg-primary: #12111a;
+  --bg-card: #1a1824;
+  --bg-card-hover: #211f2e;
+  --parchment: #f5e6c8;
+  --parchment-dark: #d4b896;
+  --gold: #c9a84c;
+  --gold-light: #e8c65e;
+  --gold-glow: 0 0 30px rgba(201,168,76,0.25);
+  --red-accent: #c0392b;
+  --cyan: #4ecdc4;
+  --text-primary: #ece4d4;
+  --text-secondary: #9e958a;
+  --text-dim: #645e54;
+  --border: #2a2635;
+  --border-light: #3a3545;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(12,11,14,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-emblem { width: 36px; height: 36px; background: linear-gradient(135deg, #1a1520, #0c0b0e); border: 2px solid var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: var(--gold-glow); }
+.logo-emblem::before { content: 'DQ'; font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); text-shadow: 0 0 10px rgba(201,168,76,0.4); }
+.logo-text { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); letter-spacing: 2px; }
+.nav-back { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-secondary); letter-spacing: 1px; transition: 0.3s; }
+.nav-back:hover { color: var(--gold); }
+
+.article-hero { padding: 100px 24px 48px; max-width: 800px; margin: 0 auto; }
+.breadcrumb { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 24px; }
+.breadcrumb a { transition: 0.3s; }
+.breadcrumb a:hover { color: var(--gold); }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tag { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; border: 1px solid var(--border-light); color: var(--text-secondary); text-transform: uppercase; }
+.tag.genre { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+.tag.platform { border-color: rgba(78,205,196,0.4); color: var(--cyan); }
+.article-title { font-family: 'Abril Fatface', serif; font-size: clamp(24px, 5.5vw, 48px); color: var(--parchment); line-height: 1.15; margin-bottom: 8px; }
+.article-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+.article-info { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; display: flex; gap: 24px; flex-wrap: wrap; }
+
+.hero-image { width: 100%; max-width: 800px; margin: 32px auto 0; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-image img { width: 100%; height: auto; display: block; }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 60%, rgba(12,11,14,0.5) 100%); pointer-events: none; }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-body h2 { font-family: 'Abril Fatface', serif; font-size: 28px; color: var(--parchment); margin: 56px 0 20px; padding-left: 16px; border-left: 3px solid var(--gold); }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--parchment-dark); margin: 40px 0 16px; font-weight: 700; }
+.article-body p { font-size: 16px; line-height: 2; color: var(--text-primary); margin-bottom: 24px; }
+.article-body strong { color: var(--parchment); }
+
+.pull-quote { margin: 48px 0; padding: 32px; border-left: 3px solid var(--red-accent); background: rgba(192,57,43,0.05); }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--parchment); line-height: 1.7; margin: 0; }
+.pull-quote cite { display: block; margin-top: 12px; font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); font-style: normal; letter-spacing: 1px; }
+
+.video-wrap { margin: 40px 0; }
+.video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); }
+.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+.spec-table { width: 100%; margin: 40px 0; border-collapse: collapse; }
+.spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.spec-table th { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; width: 140px; white-space: nowrap; }
+.spec-table td { color: var(--text-primary); }
+
+.buy-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.section-heading { font-family: 'Abril Fatface', serif; font-size: 24px; color: var(--parchment); margin-bottom: 8px; }
+.section-sub { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+.buy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.buy-link { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border); transition: 0.3s; font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-primary); letter-spacing: 1px; }
+.buy-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.buy-link .icon { font-size: 20px; }
+.buy-link .name { flex: 1; }
+.buy-link .arrow { color: var(--gold); }
+
+.related-section { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.related-card { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; transition: 0.3s; display: block; }
+.related-card:hover { background: var(--bg-card-hover); border-color: rgba(201,168,76,0.3); }
+.rc-title { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); margin-bottom: 4px; }
+.rc-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; }
+.rc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+.rc-link { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+.related-card:hover .rc-link { text-decoration: underline; }
+
+.footer { padding: 48px 24px; border-top: 1px solid var(--border); background: var(--bg-primary); text-align: center; }
+.footer-logo { font-family: 'Abril Fatface', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+.footer-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.footer-copy { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 20px; }
+
+@media (max-width: 600px) {
+  .article-hero { padding: 88px 16px 32px; }
+  .article-body { padding: 32px 16px 60px; }
+  .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+  .article-body p { font-size: 15px; line-height: 1.9; }
+  .pull-quote { padding: 20px; margin: 32px 0; }
+  .pull-quote p { font-size: 17px; }
+  .spec-table th { width: 100px; font-size: 11px; padding: 10px 12px; }
+  .spec-table td { font-size: 13px; padding: 10px 12px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .buy-grid { grid-template-columns: 1fr; }
+  .article-info { flex-direction: column; gap: 8px; }
+  .related-section, .buy-section { padding: 0 16px 60px; }
+  .header { padding: 12px 16px; }
+  .logo-text { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-emblem"></span>
+    <span class="logo-text">DIGQUEST GAMES</span>
+  </a>
+  <a href="/" class="nav-back">← TOP</a>
+</header>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="/">DIGQUEST GAMES</a> / <a href="/">発掘タイトル</a> / Metal Wolf Chaos XD
+  </div>
+  <div class="meta-tags">
+    <span class="tag genre">ACTION</span>
+    <span class="tag genre">MECH</span>
+    <span class="tag platform">Xbox</span>
+    <span class="tag platform">PS4</span>
+    <span class="tag platform">PC</span>
+  </div>
+  <h1 class="article-title">Metal Wolf Chaos XD</h1>
+  <p class="article-subtitle">ソウルシリーズ以前のフロムが放った、超高カロリーの伝説</p>
+  <div class="article-info">
+    <span>// 2004 / 2019 — FromSoftware / Devolver Digital</span>
+    <span>Xbox（原作）/ PS4・Xbox One・PC（XD版）</span>
+    <span>1人プレイ</span>
+  </div>
+</div>
+
+<div class="hero-image">
+  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/974550/header.jpg" alt="Metal Wolf Chaos XD キービジュアル" loading="lazy">
+</div>
+
+<article class="article-body">
+
+  <h2>概要 — 大統領、ロボに乗って反乱軍と戦う</h2>
+
+  <p>メタルウルフカオスは、<strong>フロム・ソフトウェア</strong>が2004年にXbox向けに開発した3Dメカアクションだ。日本国内のみの発売で、海外展開はなし。Xbox自体が日本で苦戦していたこともあり、ほとんど注目されることなく市場から消えた——しかし海外のゲーマーたちの間では、輸入版を手に入れた者たちによって「伝説の珍ゲー」としてカルト的人気を誇り続けた。</p>
+
+  <p>2019年、<strong>Devolver Digital</strong>と<strong>General Arcade</strong>が協力し、グラフィックを4Kにアップスケールした<strong>「メタルウルフカオス XD」</strong>としてPS4 / Xbox One / PC（Steam・GOG）向けに世界同時発売。15年越しに世界解放された瞬間、ゲーム界隈に衝撃が走った。</p>
+
+  <p>ストーリーはこうだ。<strong>アメリカ合衆国大統領マイケル・ウィルソンが、副大統領リチャード・ホークのクーデターに対抗するため、秘密兵器のパワードスーツ「メタルウルフ」に搭乗し、ホワイトハウスから飛び出してアメリカ全土を戦い抜く</strong>——以上。</p>
+
+  <div class="video-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/r7e6OFm_MaE" title="Metal Wolf Chaos XD - Official Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">// Metal Wolf Chaos XD — Official Announcement Trailer (Devolver Digital)</p>
+  </div>
+
+  <h2>ゲームプレイ — 武器カスタマイズと爆発の嵐</h2>
+
+  <p>ゲームはステージクリア型のメカアクションだ。メタルウルフには<strong>左右に4つずつ、計8スロット</strong>の武器をセットでき、マシンガン・ロケットランチャー・バズーカ・フレイムスロワー・スナイパーライフルなど数十種類の武器から自由にカスタマイズできる。</p>
+
+  <p>各ステージでは敵兵士、戦車、戦闘機、巨大ボスと戦い、ステージ各所で民間人を救出するサブミッションもある。難易度はそれほど高くなく、爽快感重視のゲームデザインだ。<strong>武器のオーバーヒートシステム</strong>があり、撃ちすぎると冷却が必要になるため、複数武器を使い回す戦術が自然と身につく。</p>
+
+  <p>しかし何より重要なのは、すべてのシーンに漂う<strong>「これは本当に大丈夫なのか？」という超えた感覚</strong>だ。ホワイトハウスが爆破され、自由の女神が戦場になり、大統領が「HOW DO YOU LIKE ME NOW?!」と叫びながら戦車を素手でぶん投げる——そのすべてが真剣に制作されているのがフロムのすごさだ。</p>
+
+  <div class="pull-quote">
+    <p>Nothing is impossible for a US President! — マイケル・ウィルソン大統領</p>
+    <cite>— Metal Wolf Chaos XD 劇中より（名言として世界に広まった）</cite>
+  </div>
+
+  <h2>なぜ「バカゲー」ではなく「名作」なのか</h2>
+
+  <p>メタルウルフカオスはしばしば「バカゲー」と評されるが、それはこのゲームの本質を半分しか捉えていない。フロム・ソフトウェアは本作を、<strong>2004年当時のアメリカ政治への批評</strong>として意図的に制作した節がある。ブッシュ政権下の「正義の戦争」を誇張し、大統領が自ら戦場に出るという荒唐無稽なファンタジーは、アメリカの自国神話への皮肉でもある。</p>
+
+  <p>海外でカルト的人気を得た理由のひとつが、<strong>日本人が書いた英語の台詞の独特のリズム</strong>だ。直訳的な英語表現が生む独特の語感は、母国語でないからこそ生まれる「超えた表現」として愛された。XD版ではこの英語ボイスがそのまま維持されている。</p>
+
+  <h3>フロム・ソフトウェアのもう一つの顔</h3>
+
+  <p>「Demon's Souls」（2009）以降のフロムといえばソウルシリーズのイメージが強いが、それ以前のフロムは<strong>アーマードコアシリーズ、エヴァンジェリカルなロボゲー、そしてメタルウルフカオスのような異色作</strong>を精力的に作るスタジオだった。本作は「もうひとつのFromSoftware」を知る貴重な窓口だ。エルデンリング世代のプレイヤーが遊べば、フロムへの見方が変わるだろう。</p>
+
+  <h2>購入ガイド — 今すぐ遊べるプラットフォーム</h2>
+
+  <table class="spec-table">
+    <tr><th>タイトル</th><td>Metal Wolf Chaos XD</td></tr>
+    <tr><th>開発</th><td>FromSoftware（原作）/ General Arcade（XDリマスター）</td></tr>
+    <tr><th>発売日</th><td>2004年12月22日（Xbox / 日本のみ）/ 2019年8月6日（XD版・全世界）</td></tr>
+    <tr><th>ジャンル</th><td>3Dメカアクション / シューター</td></tr>
+    <tr><th>プレイ人数</th><td>1人</td></tr>
+    <tr><th>対応機種</th><td>PS4 / Xbox One / PC（Steam・GOG）</td></tr>
+    <tr><th>クリア時間</th><td>約5〜8時間（ストーリー1周）</td></tr>
+    <tr><th>言語</th><td>英語音声 / 日本語字幕対応</td></tr>
+    <tr><th>CERO</th><td>D（17歳以上対象）</td></tr>
+  </table>
+
+</article>
+
+<section class="buy-section">
+  <h2 class="section-heading">購入リンク</h2>
+  <p class="section-sub">// Where to Buy</p>
+  <div class="buy-grid">
+    <a href="https://store.steampowered.com/app/974550/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">💻</span><span class="name">Steam</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://store.playstation.com/ja-jp/" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🕹️</span><span class="name">PlayStation Store</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://www.gog.com/game/metal_wolf_chaos_xd" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🖥️</span><span class="name">GOG.com（DRM-Free）</span><span class="arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="related-section">
+  <h2 class="section-heading">メタルウルフの系譜</h2>
+  <p class="section-sub">// FromSoftware's other face & related works</p>
+  <div class="related-grid">
+    <a href="https://store.steampowered.com/app/1888160/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Armored Core VI: Fires of Rubicon</div>
+      <div class="rc-sub">2023 — FromSoftware</div>
+      <p class="rc-desc">フロムが「ソウル路線」と同時進行で育ててきたメカシリーズの最新作。メタルウルフのような豪快さとソウルライクの緊張感が融合した、フロムの真骨頂。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/835960/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Zone of the Enders: The 2nd Runner M∀RS</div>
+      <div class="rc-sub">2003 / 2018 — Konami / CRYTEK</div>
+      <p class="rc-desc">小島秀夫プロデュースの3Dメカアクション。高速戦闘と詩的な世界観で、メタルウルフとは異なるメカゲームの美学を体現する。HDリマスター版が現行機でプレイ可能。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1737650/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Earth Defense Force 6</div>
+      <div class="rc-sub">2022 — Sandlot / D3 Publisher</div>
+      <p class="rc-desc">B級映画的なノリで巨大生物と戦う日本のバカゲー系アクション。メタルウルフと同じく「真剣に作られた荒唐無稽」の系譜に属する唯一無二の体験。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/863550/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Override: Mech City Brawl</div>
+      <div class="rc-sub">2018 — The Balance Inc.</div>
+      <p class="rc-desc">巨大ロボ同士の対戦格闘アクション。メタルウルフの「ロボに乗って街を壊す」爽快感を、マルチプレイ対戦として洗練させた作品。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/381210/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Danger Zone</div>
+      <div class="rc-sub">2017 — Three Fields Entertainment</div>
+      <p class="rc-desc">純粋な「爆発の快感」に特化したレースゲーム。メタルウルフの「破壊することの楽しさ」を別ジャンルで体験したいなら。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/367500/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Rogue Stormers</div>
+      <div class="rc-sub">2016 — Black Forest Games</div>
+      <p class="rc-desc">荒唐無稽な世界観でガンアクションを展開するローグライト。メタルウルフに通じる「脳を切って楽しむ」系アクションの現代版。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">DIGQUEST GAMES</div>
+  <p class="footer-desc">知る人ぞ知るゲームの名作を発掘するアーカイブメディア。</p>
+  <p class="footer-desc" style="font-size:11px;letter-spacing:1px;font-family:'Courier Prime',monospace;">a plucks world media</p>
+  <p class="footer-copy">© 2026 DIGQUEST GAMES / plucks world — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

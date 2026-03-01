@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>moon — RPGの常識を壊した、アンチRPGの伝説 | DIGQUEST GAMES</title>
+<meta name="description" content="「殺すな、愛せよ」——勇者がモンスターを倒すRPGの常識を根底から問い直したラブデリックの伝説的デビュー作。UNDERTALEの源流を徹底解説。">
+<meta property="og:title" content="moon — RPGの常識を壊した、アンチRPGの伝説">
+<meta property="og:description" content="「殺すな、愛せよ」——勇者がモンスターを倒すRPGの常識を根底から問い直したラブデリックの伝説的デビュー作。">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Special+Elite&family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-deep: #0c0b0e;
+  --bg-primary: #12111a;
+  --bg-card: #1a1824;
+  --bg-card-hover: #211f2e;
+  --parchment: #f5e6c8;
+  --parchment-dark: #d4b896;
+  --gold: #c9a84c;
+  --gold-light: #e8c65e;
+  --gold-glow: 0 0 30px rgba(201,168,76,0.25);
+  --red-accent: #c0392b;
+  --cyan: #4ecdc4;
+  --text-primary: #ece4d4;
+  --text-secondary: #9e958a;
+  --text-dim: #645e54;
+  --border: #2a2635;
+  --border-light: #3a3545;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; background: rgba(12,11,14,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-emblem { width: 36px; height: 36px; background: linear-gradient(135deg, #1a1520, #0c0b0e); border: 2px solid var(--gold); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: var(--gold-glow); }
+.logo-emblem::before { content: 'DQ'; font-family: 'Press Start 2P', monospace; font-size: 10px; color: var(--gold); text-shadow: 0 0 10px rgba(201,168,76,0.4); }
+.logo-text { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); letter-spacing: 2px; }
+.nav-back { font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-secondary); letter-spacing: 1px; transition: 0.3s; }
+.nav-back:hover { color: var(--gold); }
+
+.article-hero { padding: 100px 24px 48px; max-width: 800px; margin: 0 auto; }
+.breadcrumb { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 24px; }
+.breadcrumb a { transition: 0.3s; }
+.breadcrumb a:hover { color: var(--gold); }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tag { font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 1.5px; padding: 4px 12px; border: 1px solid var(--border-light); color: var(--text-secondary); text-transform: uppercase; }
+.tag.genre { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+.tag.platform { border-color: rgba(78,205,196,0.4); color: var(--cyan); }
+.article-title { font-family: 'Abril Fatface', serif; font-size: clamp(32px, 7vw, 56px); color: var(--parchment); line-height: 1.15; margin-bottom: 8px; }
+.article-subtitle { font-family: 'Playfair Display', serif; font-size: clamp(16px, 3vw, 22px); color: var(--text-secondary); font-style: italic; margin-bottom: 24px; }
+.article-info { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; display: flex; gap: 24px; flex-wrap: wrap; }
+
+.hero-image { width: 100%; max-width: 800px; margin: 32px auto 0; overflow: hidden; border: 1px solid var(--border); position: relative; }
+.hero-image img { width: 100%; height: auto; display: block; }
+.hero-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 60%, rgba(12,11,14,0.5) 100%); pointer-events: none; }
+
+.article-body { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+.article-body h2 { font-family: 'Abril Fatface', serif; font-size: 28px; color: var(--parchment); margin: 56px 0 20px; padding-left: 16px; border-left: 3px solid var(--gold); }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--parchment-dark); margin: 40px 0 16px; font-weight: 700; }
+.article-body p { font-size: 16px; line-height: 2; color: var(--text-primary); margin-bottom: 24px; }
+.article-body strong { color: var(--parchment); }
+
+.pull-quote { margin: 48px 0; padding: 32px; border-left: 3px solid var(--red-accent); background: rgba(192,57,43,0.05); }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--parchment); line-height: 1.7; margin: 0; }
+.pull-quote cite { display: block; margin-top: 12px; font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); font-style: normal; letter-spacing: 1px; }
+
+.article-image { margin: 40px 0; }
+.article-image img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+.article-image figcaption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+.video-wrap { margin: 40px 0; }
+.video-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 1px solid var(--border); }
+.video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 10px; text-align: center; }
+
+.spec-table { width: 100%; margin: 40px 0; border-collapse: collapse; }
+.spec-table th, .spec-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.spec-table th { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; width: 140px; white-space: nowrap; }
+.spec-table td { color: var(--text-primary); }
+
+.buy-section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+.section-heading { font-family: 'Abril Fatface', serif; font-size: 24px; color: var(--parchment); margin-bottom: 8px; }
+.section-sub { font-family: 'Courier Prime', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+.buy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.buy-link { display: flex; align-items: center; gap: 12px; padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border); transition: 0.3s; font-family: 'Courier Prime', monospace; font-size: 13px; color: var(--text-primary); letter-spacing: 1px; }
+.buy-link:hover { border-color: var(--gold); background: var(--bg-card-hover); }
+.buy-link .icon { font-size: 20px; }
+.buy-link .name { flex: 1; }
+.buy-link .arrow { color: var(--gold); }
+
+.related-section { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.related-card { background: var(--bg-card); border: 1px solid var(--border); padding: 20px; transition: 0.3s; display: block; }
+.related-card:hover { background: var(--bg-card-hover); border-color: rgba(201,168,76,0.3); }
+.rc-title { font-family: 'Abril Fatface', serif; font-size: 18px; color: var(--parchment); margin-bottom: 4px; }
+.rc-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 10px; }
+.rc-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 12px; }
+.rc-link { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+.related-card:hover .rc-link { text-decoration: underline; }
+
+.footer { padding: 48px 24px; border-top: 1px solid var(--border); background: var(--bg-primary); text-align: center; }
+.footer-logo { font-family: 'Abril Fatface', serif; font-size: 20px; color: var(--gold); margin-bottom: 8px; }
+.footer-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 4px; }
+.footer-copy { font-family: 'Courier Prime', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 20px; }
+
+@media (max-width: 600px) {
+  .article-hero { padding: 88px 16px 32px; }
+  .article-body { padding: 32px 16px 60px; }
+  .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+  .article-body p { font-size: 15px; line-height: 1.9; }
+  .pull-quote { padding: 20px; margin: 32px 0; }
+  .pull-quote p { font-size: 17px; }
+  .spec-table th { width: 100px; font-size: 11px; padding: 10px 12px; }
+  .spec-table td { font-size: 13px; padding: 10px 12px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .buy-grid { grid-template-columns: 1fr; }
+  .article-info { flex-direction: column; gap: 8px; }
+  .related-section, .buy-section { padding: 0 16px 60px; }
+  .header { padding: 12px 16px; }
+  .logo-text { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-emblem"></span>
+    <span class="logo-text">DIGQUEST GAMES</span>
+  </a>
+  <a href="/" class="nav-back">← TOP</a>
+</header>
+
+<div class="article-hero">
+  <div class="breadcrumb">
+    <a href="/">DIGQUEST GAMES</a> / <a href="/">発掘タイトル</a> / moon
+  </div>
+  <div class="meta-tags">
+    <span class="tag genre">ANTI-RPG</span>
+    <span class="tag genre">ADVENTURE</span>
+    <span class="tag platform">PS</span>
+    <span class="tag platform">Switch</span>
+  </div>
+  <h1 class="article-title">moon</h1>
+  <p class="article-subtitle">RPGの常識を壊した、アンチRPGの伝説</p>
+  <div class="article-info">
+    <span>// 1997 — Love-de-Lic / ASCII</span>
+    <span>Switch版: 2019（Onion Games）</span>
+    <span>1人プレイ</span>
+  </div>
+</div>
+
+<div class="hero-image">
+  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1449350/header.jpg" alt="moon ゲーム キービジュアル" loading="lazy">
+</div>
+
+<article class="article-body">
+
+  <h2>概要 — ゲームの中のゲーム、その矛盾に向き合え</h2>
+
+  <p>moonは、<strong>Love-de-Lic</strong>がASCIIから発売したアドベンチャーゲームだ。1997年のPlayStation版は当時ほとんど注目されず、廃盤後は中古市場で高値がつくプレミアソフトとなっていた。その後2019年に<strong>Onion Games</strong>がNintendo Switchに移植し、世界中で再評価を受けた。</p>
+
+  <p>本作のコンセプトは革命的だった——<strong>「RPGを遊んでいる少年が、そのゲームの中に吸い込まれてしまう」</strong>という入れ子構造の物語。その世界では「勇者」がモンスターを倒し続けているのだが、主人公（プレイヤー）がやるべきことは戦うことではない。<strong>傷ついたモンスターを助け、世界に散らばった「ラブ」を集めること</strong>——それがmoonの正体だ。</p>
+
+  <p>「殺すな、愛せよ」。このゲームのすべてはそこに集約される。</p>
+
+  <div class="video-wrap">
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/kq4HsLlLF9w" title="moon Nintendo Switch Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="video-caption">// moon — Nintendo Switch Launch Trailer (Onion Games)</p>
+  </div>
+
+  <h2>ゲームプレイ — 昼夜が回り、世界が息をしている</h2>
+
+  <p>moonはリアルタイムで時間が進む世界だ。<strong>昼と夜のサイクル</strong>があり、NPCたちはそれぞれの生活ルーティンを持ち、プレイヤーの行動とは無関係に動き続ける。話しかけるタイミングによっては、昨日とまったく異なる返答が返ってくることもある。</p>
+
+  <p>プレイヤーの成長指標は「<strong>ラブ</strong>」だ。戦闘は存在せず、モンスターを倒す必要もない。傷ついた生き物を癒したり、NPCの困りごとを解決したり、世界各地に隠された「ラブ」を見つけることで、ラブのゲージが満ちていく。ラブが増えるほど「起きていられる時間」が長くなり、行動範囲が広がっていく。</p>
+
+  <p>ただしmoonに分かりやすい目標は示されない。<strong>次に何をすべきかは、プレイヤー自身が世界と向き合って見つけていく</strong>。それが当時のRPGプレイヤーにとって不親切に映り、埋もれた理由でもあった——しかしそれこそが、moonが語りかける本質でもある。</p>
+
+  <div class="pull-quote">
+    <p>このゲームをクリアした後、しばらくの間、普通のRPGが遊べなくなった</p>
+    <cite>— Switch版プレイヤーの証言（多数）</cite>
+  </div>
+
+  <h2>ラブデリックとは何者か — 日本インディーゲームの源流</h2>
+
+  <p><strong>Love-de-Lic（ラブデリック）</strong>は1995年に設立された日本の小規模スタジオで、moonのほかにも「L.O.L. -Lack of Love-」「UFO: A Day in the Life」などを残し、2000年に解散した。わずか数年の活動にもかかわらず、その影響力は計り知れない。</p>
+
+  <p>解散後、メンバーは複数のスタジオに分かれた。その一つが<strong>Skip Ltd.</strong>（Chibi-Roboを開発）、もう一つが<strong>Punchline</strong>（Chulipを開発）、そして現在もOnion Gamesとして活動する<strong>坂口博信ではなく木村祥朗</strong>（moonのディレクター）を中心とした系譜だ。</p>
+
+  <h3>UNDERTALEとの関係</h3>
+
+  <p>2015年にToby Foxがリリースした<strong>UNDERTALE</strong>は、「敵を倒さなくてもクリアできるRPG」として世界的な大ヒットを記録した。TobyはmoonをUNDERTALEのインスピレーション源として公言している。moonが18年の眠りから覚めてSwitchに移植されたとき、UNDERTALEのファンが「源流に会いに行く」形で殺到し、爆発的な再評価が起きた。</p>
+
+  <p>moonはUNDERTALEの「父」であり、日本のインディーゲームスピリットの原点だ。</p>
+
+  <h2>音楽 — 世界観を丸ごと包むサウンドスケープ</h2>
+
+  <p>moonのサウンドトラックはゲーム音楽史上でも異色の存在だ。<strong>日本語のポップソング、環境音、民族音楽、エレクトロニカ</strong>が混在し、世界の各エリアごとに異なる音楽的質感が広がる。戦闘BGMは存在せず、音楽はつねにその場の「空気」として機能する。</p>
+
+  <p>Switch版ではサウンドトラックが一部リマスターされており、CDでの販売もされた。一度聴いたら忘れられないフックを持つ「ラブソング」群は、今なおプレイヤーの記憶に残り続けている。</p>
+
+  <h2>購入ガイド — 今すぐ遊べるプラットフォーム</h2>
+
+  <table class="spec-table">
+    <tr><th>タイトル</th><td>moon（ムーン）</td></tr>
+    <tr><th>開発</th><td>Love-de-Lic（1997）/ Onion Games（2019移植）</td></tr>
+    <tr><th>発売日</th><td>1997年10月16日（PS）/ 2019年10月10日（Switch）</td></tr>
+    <tr><th>ジャンル</th><td>アドベンチャー / アンチRPG</td></tr>
+    <tr><th>プレイ人数</th><td>1人</td></tr>
+    <tr><th>対応機種</th><td>PlayStation（廃盤）/ Nintendo Switch</td></tr>
+    <tr><th>クリア時間</th><td>約10〜20時間（ラブ100%収集は30時間超）</td></tr>
+    <tr><th>日本語</th><td>◯（テキストアドベンチャー形式）</td></tr>
+    <tr><th>英語対応</th><td>◯（Switch版は多言語対応）</td></tr>
+    <tr><th>CERO</th><td>A（全年齢対象）</td></tr>
+  </table>
+
+</article>
+
+<section class="buy-section">
+  <h2 class="section-heading">購入リンク</h2>
+  <p class="section-sub">// Where to Buy</p>
+  <div class="buy-grid">
+    <a href="https://store-jp.nintendo.com/item/software/D70010000016085" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">🎮</span><span class="name">Nintendo eShop</span><span class="arrow">↗</span>
+    </a>
+    <a href="https://www.amazon.co.jp/s?k=moon+Onion+Games+Switch" target="_blank" rel="noopener" class="buy-link">
+      <span class="icon">📦</span><span class="name">Amazon.co.jp</span><span class="arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<section class="related-section">
+  <h2 class="section-heading">moonの源流と後継</h2>
+  <p class="section-sub">// Games that share moon's spirit</p>
+  <div class="related-grid">
+    <a href="https://store.steampowered.com/app/391540/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">UNDERTALE</div>
+      <div class="rc-sub">2015 — Toby Fox</div>
+      <p class="rc-desc">moonから直接インスピレーションを受けた「敵を倒さないRPG」。moonを遊んだ後にプレイすれば、その影響の深さに驚くはず。両作は表裏一体だ。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1070710/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Disco Elysium</div>
+      <div class="rc-sub">2019 — ZA/UM</div>
+      <p class="rc-desc">「戦闘ではなく会話と内省でゲームが進む」という概念を極限まで推し進めた傑作CRPG。moonと同様、プレイヤーに世界との向き合い方を問う。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1533390/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Chicory: A Colorful Tale</div>
+      <div class="rc-sub">2021 — Greg Lobanov</div>
+      <p class="rc-desc">ラブデリック系譜のDNAを継ぐ現代のインディー作品。世界に色を取り戻すゲームで、「戦わずに愛と創造で問題を解決する」moonの精神が宿る。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/1132210/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Deltarune</div>
+      <div class="rc-sub">2018 / 続編制作中 — Toby Fox</div>
+      <p class="rc-desc">UNDERTALEの後継作。moonから始まる「暴力への問い」を現代的文脈でさらに深化させる。moonのファンは必ずプレイすべき。</p>
+      <span class="rc-link">Steam（無料）↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/837340/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Fell Seal: Arbiter's Mark</div>
+      <div class="rc-sub">2019 — 6 Eyes Studio</div>
+      <p class="rc-desc">クラシックなSRPGをベースに選択の重みを描く。moonとは異なるアプローチだが、「RPGとは何か」を問い直す意志を共有する一本。</p>
+      <span class="rc-link">Steam ↗</span>
+    </a>
+    <a href="https://store.steampowered.com/app/457140/" target="_blank" rel="noopener" class="related-card">
+      <div class="rc-title">Yume Nikki</div>
+      <div class="rc-sub">2004 — Kikiyama（フリーウェア）</div>
+      <p class="rc-desc">moonと同じく「目的が明示されない探索型アドベンチャー」の系譜。夢の世界を彷徨い、その意味をプレイヤーが解釈する。日本インディーゲームの異端にして金字塔。</p>
+      <span class="rc-link">Steam（無料）↗</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">DIGQUEST GAMES</div>
+  <p class="footer-desc">知る人ぞ知るゲームの名作を発掘するアーカイブメディア。</p>
+  <p class="footer-desc" style="font-size:11px;letter-spacing:1px;font-family:'Courier Prime',monospace;">a plucks world media</p>
+  <p class="footer-copy">© 2026 DIGQUEST GAMES / plucks world — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
