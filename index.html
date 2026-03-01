@@ -462,7 +462,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .card-image img {
-  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.85) contrast(1.05);
+  transition: transform 0.6s, filter 0.6s;
 }
 
 .card-image-placeholder {
@@ -507,6 +514,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--gold);
   z-index: 2;
   backdrop-filter: blur(4px);
+  max-width: calc(100% - 24px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-body {
@@ -937,7 +948,8 @@ a { color: inherit; text-decoration: none; }
     <!-- 1: Cuphead -->
     <a href="articles/cuphead.html" class="game-card fade-in">
       <div class="card-image">
-        <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dw182faf4f/products/D70010000016331/squareHeroBanner/139836b3193bb50dab4982ac706d5d5d148fb7cc34ff3c6c21c34cdefa4f5df7.jpg?sw=990&strip=false" alt="Cuphead" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.85) contrast(1.1);transition:transform 0.6s,filter 0.6s;">
+        <div class="card-image-placeholder cuphead" style="display:none">CUPHEAD</div>
+        <img src="https://store-jp.nintendo.com/dw/image/v2/BFGJ_PRD/on/demandware.static/-/Sites-all-master-catalog/ja_JP/dw182faf4f/products/D70010000016331/squareHeroBanner/139836b3193bb50dab4982ac706d5d5d148fb7cc34ff3c6c21c34cdefa4f5df7.jpg?sw=990&strip=false" alt="Cuphead" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'">
         <span class="card-platform-badge">Xbox / Switch / PS4 / PC</span>
       </div>
       <div class="card-body">
@@ -956,8 +968,9 @@ a { color: inherit; text-decoration: none; }
     <!-- 2: Valkyrie Profile -->
     <a href="articles/valkyrie-profile.html" class="game-card fade-in">
       <div class="card-image">
-        <div class="card-image-placeholder valkyrie">VALKYRIE</div>
-        <span class="card-platform-badge">PS / PSP / Switch</span>
+        <div class="card-image-placeholder valkyrie" style="display:none">VALKYRIE</div>
+        <img src="https://img.youtube.com/vi/DWuVBOZ50GI/maxresdefault.jpg" alt="ヴァルキリープロファイル -Lenneth-" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'">
+        <span class="card-platform-badge">PS / PSP / PS4 / PS5</span>
       </div>
       <div class="card-body">
         <div class="card-era">// 1999 — tri-Ace / ENIX</div>
@@ -975,7 +988,8 @@ a { color: inherit; text-decoration: none; }
     <!-- 4: moon -->
     <a href="articles/moon.html" class="game-card fade-in">
       <div class="card-image">
-        <div class="card-image-placeholder moon">MOON</div>
+        <div class="card-image-placeholder moon" style="display:none">MOON</div>
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1449350/header.jpg" alt="moon" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'">
         <span class="card-platform-badge">PS / Switch</span>
       </div>
       <div class="card-body">
@@ -994,8 +1008,9 @@ a { color: inherit; text-decoration: none; }
     <!-- 5: Ikaruga -->
     <a href="articles/ikaruga.html" class="game-card fade-in">
       <div class="card-image">
-        <div class="card-image-placeholder ikaruga">斑鳩</div>
-        <span class="card-platform-badge">DC / GC / Switch / PS4</span>
+        <div class="card-image-placeholder ikaruga" style="display:none">斑鳩</div>
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/306950/header.jpg" alt="斑鳩 IKARUGA" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'">
+        <span class="card-platform-badge">DC / GC / Switch / PS4 / PC</span>
       </div>
       <div class="card-body">
         <div class="card-era">// 2001 — Treasure</div>
@@ -1013,8 +1028,9 @@ a { color: inherit; text-decoration: none; }
     <!-- 6: Tactics Ogre -->
     <a href="articles/tactics-ogre.html" class="game-card fade-in">
       <div class="card-image">
-        <div class="card-image-placeholder tactics">T.OGRE</div>
-        <span class="card-platform-badge">SFC / PSP / Switch / PS5</span>
+        <div class="card-image-placeholder tactics" style="display:none">T.OGRE</div>
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1702170/header.jpg" alt="タクティクスオウガ リボーン" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'">
+        <span class="card-platform-badge">Switch / PS4 / PS5 / PC</span>
       </div>
       <div class="card-body">
         <div class="card-era">// 1995 — Quest</div>
@@ -1032,7 +1048,8 @@ a { color: inherit; text-decoration: none; }
     <!-- 7: Metal Wolf Chaos XD -->
     <a href="articles/metal-wolf-chaos.html" class="game-card fade-in">
       <div class="card-image">
-        <div class="card-image-placeholder metalwolf">M.W.C.</div>
+        <div class="card-image-placeholder metalwolf" style="display:none">M.W.C.</div>
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/974550/header.jpg" alt="Metal Wolf Chaos XD" loading="lazy" onerror="this.style.display='none';this.previousElementSibling.style.display='flex'">
         <span class="card-platform-badge">Xbox / PS4 / PC</span>
       </div>
       <div class="card-body">
